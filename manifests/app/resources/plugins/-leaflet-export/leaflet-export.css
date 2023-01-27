@@ -1,0 +1,82 @@
+.leaflet-export-overlay[data-show="0"]{
+  display: none;
+}
+.leaflet-export-overlay[data-show="1"]{
+  display: 'block';
+}
+.leaflet-export-overlay{
+  width: 100%;
+  height: 100%;
+  z-index: 99999;
+  position: absolute;
+  background-color: #d9d9d9;
+}
+.leaflet-export-overlay .leaflet-export-box{
+    width: 100%;
+    height: 100%;
+  }
+.leaflet-export-overlay .leaflet-export-loader {
+  display: block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+}
+.leaflet-export-overlay .leaflet-export-loader div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #fff;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.leaflet-export-overlay[data-show="1"] .leaflet-export-loader div:nth-child(1) {
+  left: 8px;
+  animation: leaflet-export-step1 0.6s infinite;
+}
+.leaflet-export-overlay[data-show="1"] .leaflet-export-loader div:nth-child(2) {
+  left: 8px;
+  animation: leaflet-export-step2 0.6s infinite;
+}
+.leaflet-export-overlay[data-show="1"] .leaflet-export-loader div:nth-child(3) {
+  left: 32px;
+  animation: leaflet-export-step2 0.6s infinite;
+}
+.leaflet-export-overlay[data-show="1"] .leaflet-export-loader div:nth-child(4) {
+  left: 56px;
+  animation: leaflet-export-step3 0.6s infinite;
+}
+#map.print,
+#map canvas.leaflet-export{
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 9999999999 !important;
+}
+@keyframes leaflet-export-step1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes leaflet-export-step3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes leaflet-export-step2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}

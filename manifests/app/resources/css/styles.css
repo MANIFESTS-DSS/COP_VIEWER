@@ -1,0 +1,1603 @@
+@font-face {
+    font-family: "Xunta Sans";
+    src: url(../fonts/XuntaSans/woff2/XuntaSans-Bold.woff2) format("woff2"),
+        url(../fonts/XuntaSans/woff/XuntaSans-Bold.woff) format("woff");
+    font-style: normal;
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "Xunta Sans";
+    src: url(../fonts/XuntaSans/woff2/XuntaSans-BoldItalic.woff2) format("woff2"),
+        url(../fonts/XuntaSans/woff/XuntaSans-BoldItalic.woff) format("woff");
+    font-style: italic;
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "Xunta Sans";
+    src: url(../fonts/XuntaSans/woff2/XuntaSans-Regular.woff2) format("woff2"),
+        url(../fonts/XuntaSans/woff/XuntaSans-Regular.woff) format("woff");
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Xunta Sans";
+    src: url(../fonts/XuntaSans/woff2/XuntaSans-Italic.woff2) format("woff2"),
+        url(../fonts/XuntaSans/woff/XuntaSans-Italic.woff) format("woff");
+    font-style: italic;
+    font-weight: 400;
+}
+
+* {
+    font-family: "Xunta Sans";
+    font-weight: 400;
+}
+
+.material-symbols-outlined,
+.material-symbols-outlined span {
+    color: white;
+}
+
+.no-highlight {
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+}
+
+#app {
+    /* app */
+    --main: #007bc4;
+    --menu-color: #002b4a;
+    --container-color: #2b2b2b;
+    --menu-panel-hover: #007bc4;
+    --menu-panel-label: #fff;
+    --menu-group: #fafafa;
+    --menu-group-hover: #f5f5f5;
+    --menu-group-label: #2b2b2b;
+    --menu-layer-hover: #fafafa;
+    --menu-layer-label: #767676;
+    --menu-layer-label-active: #2b2b2b;
+    --menu-layer-separation: #ebebeb;
+    --menu-toggle-icon: #000;
+    --menu-toggle-hover: #242424;
+    --active-panel: #002b4a;
+    --active-panel-title: #fff;
+    --active-panel-layer: #fff;
+    --active-panel-layer-label: #fff;
+    --active-panel-layer-border: #ebebeb;
+    --active-panel-delete: #d24837;
+    --active-panel-options: #2b2b2b;
+    --active-panel-options-hover: #fafafa;
+    --active-panel-options-opacity-text: #767676;
+    --map-button: #2b2b2b;
+    --search-background: #ffffff;
+    --search-color: #767676;
+    --shadow-color: #000;
+    /* leaflet */
+    --leaflet-shadow: #00000040;
+    --leaflet-plugins-text-color: #fff;
+    --leaflet-plugins-text-shadow: #000;
+    /* slider */
+    --slider-bar-border-color: #d2d2d2;
+    --slider-bar-empty-color: #ebebeb;
+    --slider-bar-complete-color: #007bc4;
+    --slider-thumb-border-color: #fff;
+    --slider-thumb-color: #007bc4;
+
+    overflow: hidden;
+}
+
+main #session {
+    padding: 6px;
+    font-size: 0.86rem;
+    background-color: #fff;
+}
+
+main #session b {
+    margin-left: 12px;
+    font-size: 1rem;
+}
+
+#app .map-container {
+    height: 100vh;
+    width: 100%;
+    background-color: var(--container-color);
+}
+
+#app #map {
+    height: calc(100% - var(--player-height));
+    width: 100%;
+}
+
+#app #map[data-query="true"] {
+    cursor: pointer;
+}
+
+#app #map .leaflet-control-layers,
+#app #map .leaflet-bar,
+#app #map .leaflet-control-zoom.leaflet-control-layers>a,
+#app #map .leaflet-control-zoom.leaflet-bar>a,
+#app #map .leaflet-control-zoom.leaflet-bar>div {
+    border: unset;
+    box-shadow: 0px 2px 4px 0px var(--leaflet-shadow);
+}
+
+#app #map .leaflet-control-layers a,
+#app #map .leaflet-bar a {
+    border-radius: unset;
+}
+
+#app #map .leaflet-control-container .leaflet-control-graphicscale {
+    margin-left: 28px;
+}
+
+#app #map .leaflet-control-container .leaflet-control-graphicscale .label,
+#app #map .leaflet-map-pane .leaflet-grid-label>div {
+    color: var(--leaflet-plugins-text-color);
+    font-weight: bold;
+    font-size: 12px;
+    text-shadow: 1px 0 0 var(--leaflet-plugins-text-shadow),
+        0 -1px 0 var(--leaflet-plugins-text-shadow),
+        0 1px 0 var(--leaflet-plugins-text-shadow),
+        -1px 0 0 var(--leaflet-plugins-text-shadow);
+}
+
+#app #map .leaflet-control-container .leaflet-control-graphicscale .division {
+    background-color: var(--leaflet-plugins-text-color);
+}
+
+#app .service-layer-label,
+#app .basemap-layer-label,
+#app input[type="radio"][name="group-basemap"] {
+    pointer-events: none;
+}
+
+#app {
+    position: relative;
+    display: flex;
+}
+
+#app .left-sidebar {
+    width: 309px;
+    height: 100vh;
+    background-color: var(--menu-color);
+    position: relative;
+    transition: all 0.5s ease;
+    top: 0;
+    z-index: 99999999999;
+}
+
+#app .left-sidebar.close {
+    width: 0px;
+    opacity: 1;
+}
+
+#app .left-sidebar .button-toggle {
+    padding: 6px;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    background-color: var(--menu-color);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+#app .left-sidebar .button-toggle>span:nth-child(1) {
+    display: inline;
+}
+
+#app .left-sidebar .button-toggle>span:nth-child(2) {
+    display: none;
+}
+
+#app .left-sidebar:not(.close) .button-toggle {
+    /*transform: rotateY(180deg);*/
+    left: unset;
+    right: -35px;
+}
+
+#app .left-sidebar:not(.close) .button-toggle>span:nth-child(1) {
+    display: none;
+}
+
+#app .left-sidebar:not(.close) .button-toggle>span:nth-child(2) {
+    display: inline;
+}
+
+#app .left-sidebar .button-toggle:hover {
+    background-color: var(--menu-panel-hover);
+}
+
+#app .left-sidebar .legend-panel {
+    width: 242px;
+    margin-top: 36px;
+    transition: all 0.5s ease;
+    transform: translateX(-309px);
+    overflow-y: scroll;
+    height: calc(100vh - 50px);
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+#app .left-sidebar .legend-panel::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+#app .left-sidebar:not(.close) .legend-panel {
+    transform: unset;
+}
+
+#app .left-sidebar .legend-panel .layers-panel {
+    height: 100%;
+}
+
+#app .left-sidebar .legend-panel .service-panel:hover {
+    background-color: var(--menu-panel-hover);
+}
+
+#app .left-sidebar .legend-panel .service-panel-label {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 19px;
+    color: var(--menu-panel-label);
+    padding: 8px 28px 8px 8px;
+    gap: 8px;
+    cursor: pointer;
+    position: relative;
+}
+
+#app .left-sidebar .legend-panel .service-panel-label:after,
+#app .left-sidebar .legend-panel .service-group-label:after {
+    content: "\e5cc";
+    font-family: "Material Symbols Rounded";
+    font-size: 22px;
+    font-weight: 300;
+    position: absolute;
+    right: 6px;
+}
+
+#app .left-sidebar .legend-panel .service-panel[aria-expanded="true"] .service-panel-label:after,
+#app .left-sidebar .legend-panel .service-group[aria-expanded="true"] .service-group-label:after {
+    content: "\e5cf";
+}
+
+#app .card-body {
+    border: unset;
+    border-radius: unset;
+    padding: 0px;
+}
+
+#app .left-sidebar .legend-panel .service-group {
+    padding: 8px;
+    padding-right: 24px;
+    cursor: pointer;
+    background-color: var(--menu-group);
+    position: relative;
+}
+
+#app .left-sidebar .legend-panel .service-group:hover {
+    background-color: var(--menu-group-hover);
+}
+
+#app .left-sidebar .legend-panel .service-group-label {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--menu-group-label);
+}
+
+#app .left-sidebar .legend-panel .service-layer {
+    padding-left: 34px;
+    position: relative;
+    cursor: pointer;
+}
+
+#app .left-sidebar .legend-panel .service-layer:hover {
+    background-color: var(--menu-layer-hover);
+}
+
+#app .left-sidebar .legend-panel .service-layer:before {
+    content: "\e8f5";
+    font-family: "Material Symbols Rounded";
+    position: absolute;
+    left: 6px;
+    width: 24px;
+    height: 100%;
+    padding: 3px;
+    font-size: 18px;
+    color: var(--menu-layer-label);
+}
+
+#app .left-sidebar .legend-panel .service-layer[data-active="1"]:before {
+    content: "\e8f4";
+    color: var(--menu-layer-label-active);
+}
+
+#app .left-sidebar .legend-panel .service-layer-label {
+    position: relative;
+    padding: 8px;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--menu-layer-label);
+}
+
+#app .left-sidebar .legend-panel .service-layer-label:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    background-color: var(--menu-layer-separation);
+}
+
+#app .left-sidebar .legend-panel .service-layer[data-active="1"] .service-layer-label {
+    color: var(--menu-layer-label-active);
+}
+
+#app .right-sidebar {
+    background-color: var(--active-panel);
+    position: relative;
+    transition: all 0.5s ease;
+    top: 0;
+    z-index: 99999999999;
+    display: flex;
+    flex-direction: column;
+}
+
+#app .right-sidebar.close {
+    width: 0px;
+    overflow: hidden;
+}
+
+/*
+    #app .right-sidebar .button-toggle {
+        padding: 6px;
+        width: 36px;
+        height: 36px;
+        cursor: pointer;
+        background-color: var(--active-panel);
+        position: absolute;
+        left: -35px;
+        transform: rotateY(180deg);
+    }
+
+    #app .right-sidebar .button-toggle > span:nth-child(1) {
+        display: inline;
+    }
+
+    #app .right-sidebar .button-toggle > span:nth-child(2) {
+        display: none;
+    }
+
+    #app .right-sidebar .button-toggle:hover {
+        background-color: #242424;
+    }
+
+    #app .right-sidebar:not(.close) .button-toggle {
+        transform: unset;
+    }
+
+    #app .right-sidebar:not(.close) .button-toggle > span:nth-child(1) {
+        display: none;
+    }
+
+    #app .right-sidebar:not(.close) .button-toggle > span:nth-child(2) {
+        display: inline;
+    }
+*/
+
+#app .right-sidebar:not(.close) {
+    width: 424px;
+    transition: all 0.5s ease;
+    height: 100vh;
+}
+
+#app .right-sidebar .active-panel {
+    width: 348px;
+    transition: all 0.5s ease;
+}
+
+#app .right-sidebar .active-panel .active-panel-title,
+#app .right-sidebar .active-panel .active-custom-panel-title {
+    padding: 8px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 19px;
+    color: var(--active-panel-title);
+    height: 36px;
+}
+
+#app .right-sidebar .active-panel .active-layers-panel,
+#app .right-sidebar .active-panel .active-custom-layers-panel {
+    background-color: var(--active-panel-layer);
+    max-height: 262px;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+#app .right-sidebar .active-panel .active-layers-panel::-webkit-scrollbar,
+#app .right-sidebar .active-panel .active-custom-layers-panel::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+#app .right-sidebar .active-panel .active-layers-panel .layer-element,
+#app .right-sidebar .active-panel .active-custom-layers-panel .layer-element {
+    display: flex;
+    flex-wrap: nowrap;
+    border: 1px solid var(--active-panel-layer-border);
+}
+
+#app .right-sidebar .active-panel .active-layers-panel .layer-element .layer-container,
+#app .right-sidebar .active-panel .active-custom-layers-panel .layer-element .layer-container {
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 6px;
+}
+
+#app .right-sidebar .active-panel .active-layers-panel .layer-element .layer-container .layer-text,
+#app .right-sidebar .active-panel .active-custom-layers-panel .layer-element .layer-container .layer-text {
+    flex-grow: 1;
+}
+
+#app .right-sidebar .active-panel .active-layers-panel .layer-element .layer-container .layer-options,
+#app .right-sidebar .active-panel .active-custom-layers-panel .layer-element .layer-container .layer-options {
+    display: flex;
+    justify-content: end;
+    font-size: 18px;
+}
+
+#app .right-sidebar .active-panel .active-layers-panel .layer-element .layer-container .layer-options>div,
+#app .right-sidebar .active-panel .active-custom-layers-panel .layer-element .layer-container .layer-options>div {
+    margin-left: 4px;
+    margin-right: 6px;
+    cursor: pointer;
+}
+
+#app .right-sidebar .active-panel .active-layers-panel .layer-element .layer-container .layer-options>div span,
+#app .right-sidebar .active-panel .active-custom-layers-panel .layer-element .layer-container .layer-options>div span {
+    pointer-events: none;
+    color: var(--active-panel-options);
+}
+
+#app .right-sidebar .active-panel .active-layers-panel .layer-element .layer-container .layer-options>div:hover,
+#app .right-sidebar .active-panel .active-custom-layers-panel .layer-element .layer-container .layer-options>div:hover {
+    background-color: var(--active-panel-options-hover);
+}
+
+#app .right-sidebar .active-panel .active-layers-panel .layer-element .layer-container .layer-options .opacity-panel {
+    position: absolute;
+    right: 6px;
+    background-color: var(--active-panel-layer);
+    border-radius: 3px;
+    box-shadow: 0px 1px 4px rgb(0 0 0 / 25%);
+    padding: 4px 12px;
+    font-size: 10px;
+    color: var(--active-panel-options-opacity-text);
+    text-align: right;
+    pointer-events: all;
+}
+
+#app .right-sidebar .active-panel .active-layers-panel .layer-element .layer-container .layer-options .opacity-panel:before {
+    content: "";
+    position: absolute;
+    right: 12px;
+    top: -6px;
+    width: 10px;
+    height: 10px;
+    background-color: var(--active-panel-layer);
+    border-radius: 1px;
+    transform: rotate(45deg);
+    border-top: 1px solid rgb(0 0 0 / 10%);
+    border-left: 1px solid rgb(0 0 0 / 10%);
+}
+
+#app .right-sidebar .active-panel .active-layers-panel .layer-element .layer-container .layer-options .opacity-panel input[type="range"]:focus {
+    outline: none;
+}
+
+/*
+    #app .right-sidebar .active-panel .active-layers-panel .layer-element .layer-container .layer-options .opacity-panel input[type=range]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        border: 1px solid #000000;
+        height: 36px;
+        width: 16px;
+        border-radius: 3px;
+        background: #ffffff;
+        cursor: pointer;
+        margin-top: -14px; 
+        box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    }
+*/
+
+#app .right-sidebar .active-panel .active-layers-panel .layer-element .layer-container .layer-options .opacity-panel input[type="range"]::-webkit-slider-runnable-track,
+#app .right-sidebar .active-panel .active-layers-panel .layer-element .layer-container .layer-options .opacity-panel input[type="range"]::-moz-range-track,
+#app .right-sidebar .active-panel .active-layers-panel .layer-element .layer-container .layer-options .opacity-panel input[type="range"]::-ms-track {
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px var(--shadow-color), 0px 0px 1px var(--shadow-color)/* #0d0d0d */ ;
+    background: var(--main);
+    border-radius: 1.3px;
+    border: 0.2px solid #010101;
+}
+
+#app .right-sidebar .active-panel .active-layers-panel .layer-element div:not(.layer-button):not(.toggle-legend),
+#app .right-sidebar .active-panel .active-custom-layers-panel .layer-element div:not(.layer-button) {
+    pointer-events: none;
+}
+
+#app .right-sidebar .active-panel .active-layers-panel .layer-element .layer-button,
+#app .right-sidebar .active-panel .active-custom-layers-panel .layer-element .layer-button {
+    pointer-events: all;
+}
+
+#app .right-sidebar .active-panel .active-layers-panel .layer-element>div:nth-child(1),
+#app .right-sidebar .active-panel .active-custom-layers-panel .layer-element>div:nth-child(1) {
+    flex-basis: 16%;
+    border-right: 1px solid var(--active-panel-layer-border);
+}
+
+#app .right-sidebar .active-panel .active-layers-panel .layer-element>div:nth-child(2),
+#app .right-sidebar .active-panel .active-custom-layers-panel .layer-element>div:nth-child(2) {
+    flex-basis: 84%;
+}
+
+#app .right-sidebar .active-panel .active-layers-panel .layer-element .delete-layer,
+#app .right-sidebar .active-panel .active-custom-layers-panel .layer-element .delete-layer {
+    width: 32px;
+    height: 26px;
+    cursor: pointer;
+    position: relative;
+    text-align: center;
+    margin: 2px auto;
+}
+
+#app .right-sidebar .active-panel .active-layers-panel .layer-element .delete-layer:before,
+#app .right-sidebar .active-panel .active-custom-layers-panel .layer-element .delete-layer:before {
+    content: "\e872";
+    font-family: "Material Symbols Rounded";
+    color: var(--active-panel-delete);
+    font-size: 20px;
+}
+
+#app .right-sidebar .active-panel .active-layers-panel .layer-element .delete-layer:hover,
+#app .right-sidebar .active-panel .active-custom-layers-panel .layer-element .delete-layer:hover {
+    background-color: var(--active-panel-options-hover);
+}
+
+#app .right-sidebar .active-panel .active-layers-panel .layer-element .layer-options span,
+#app .right-sidebar .active-panel .active-custom-layers-panel .layer-element .layer-options span {
+    font-family: "Material Symbols Rounded";
+}
+
+#app .right-sidebar .active-panel .active-layers-panel .layer-element .toggle-legend {
+    pointer-events: none;
+}
+
+#app .right-sidebar .active-panel .active-layers-panel .layer-element .toggle-legend:after {
+    content: "\f11b";
+    font-family: "Material Symbols Rounded";
+    color: var(--active-panel-options);
+    padding: 4px 6px;
+    font-size: 20px;
+    pointer-events: all;
+    cursor: pointer;
+    margin-left: 6px;
+    border: 2px solid transparent;
+}
+
+#app .right-sidebar .active-panel .active-layers-panel .layer-element .toggle-legend:after:hover {
+    background-color: var(--active-panel-options-hover);
+}
+
+#app .right-sidebar .active-panel .active-layers-panel .layer-element .toggle-legend.show:after {
+    border: 2px solid var(--main);
+    color: var(--main);
+}
+
+/*
+    #app .right-sidebar .active-panel .active-layers-panel .layer-element .layer-legend {
+        max-width: 282px;
+        max-height: 0;
+        transition: 0.3s;
+        overflow: hidden;
+        position: relative;
+    }
+
+    #app .right-sidebar .active-panel .active-layers-panel .layer-element .layer-legend img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    #app .right-sidebar .active-panel .active-layers-panel .layer-element .toggle-legend.show ~ .layer-legend {
+        max-height: 140px;
+        min-height: 48px;
+        padding: 6px;
+        border: 1px solid var(--active-panel-layer-border);
+        margin: 6px;
+    }
+
+    #app .right-sidebar .active-panel .active-layers-panel .layer-element .toggle-legend.show ~ .layer-legend:after {
+        content: '\f1ce';
+        font-family: "Material Symbols Rounded";
+        font-size: 26px;
+        padding: 2px 6px;
+        position: absolute;
+        top: 0;
+        right: 4px;
+        background-color: white;
+        color: var(--active-panel-options);
+        box-shadow: 0px 2px 4px 0px var(--leaflet-shadow);
+        cursor: pointer;
+        pointer-events: all;
+    }
+
+    #app .right-sidebar .active-panel .active-layers-panel .layer-element .toggle-legend.show ~ .layer-legend:after:hover {
+        background-color: grey;
+    }
+*/
+
+/* depth panel */
+#app .right-sidebar .vertical-filler {
+    flex-basis: 100%;
+}
+
+#app .right-sidebar .depth-panel {
+    margin-bottom: 55px;
+}
+
+#app .right-sidebar .depth-panel .depth-panel-title {
+    padding: 8px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 19px;
+    color: var(--active-panel-title);
+    height: 36px;
+}
+
+#app .right-sidebar .depth-panel .depth-panel-body {
+    background-color: var(--active-panel-layer);
+    padding: 5px;
+}
+
+#app .right-sidebar .depth-panel .depth-panel-body input[type="range"]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 10px;
+    cursor: pointer;
+    border-radius: 25px;
+    border: 1px solid var(--slider-bar-border-color);
+    background: linear-gradient(to right,
+            var(--slider-bar-complete-color),
+            var(--slider-bar-complete-color)),
+        var(--slider-bar-empty-color);
+    background-size: var(--background-size, 0%) 100%;
+    background-repeat: no-repeat;
+}
+
+#app .right-sidebar .depth-panel .depth-panel-body input[type="range"]::-moz-range-track {
+    width: 100%;
+    height: 10px;
+    cursor: pointer;
+    border-radius: 25px;
+    border: 1px solid var(--slider-bar-border-color);
+    background: linear-gradient(to right,
+            var(--slider-bar-complete-color),
+            var(--slider-bar-complete-color)),
+        var(--slider-bar-empty-color);
+    background-size: var(--background-size, 0%) 100%;
+    background-repeat: no-repeat;
+}
+
+#app .right-sidebar .depth-panel .depth-panel-body input[type="range"]::-ms-track {
+    width: 100%;
+    height: 10px;
+    cursor: pointer;
+    border-radius: 25px;
+    border: 1px solid var(--slider-bar-border-color);
+    background: linear-gradient(to right,
+            var(--slider-bar-complete-color),
+            var(--slider-bar-complete-color)),
+        var(--slider-bar-empty-color);
+    background-size: var(--background-size, 0%) 100%;
+    background-repeat: no-repeat;
+}
+
+#app .right-sidebar .depth-panel .depth-panel-body input[type="range"]::-webkit-slider-thumb {
+    box-shadow: 0px 0px 3px var(--slider-bar-border-color),
+        0px 0px 4px var(--slider-bar-border-color);
+    border: 3px solid var(--slider-thumb-border-color);
+    height: 20px;
+    width: 20px;
+    border-radius: 13px;
+    background: var(--slider-thumb-color);
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -5.6px;
+}
+
+#app .right-sidebar .depth-panel .depth-panel-body input[type="range"]::-moz-range-thumb {
+    box-shadow: 0px 0px 3px var(--slider-bar-border-color),
+        0px 0px 4px var(--slider-bar-border-color);
+    border: 3px solid var(--slider-thumb-border-color);
+    height: 20px;
+    width: 20px;
+    border-radius: 13px;
+    background: var(--slider-thumb-color);
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+    margin-top: -5.6px;
+}
+
+#app .right-sidebar .depth-panel .depth-panel-body input[type="range"]::-moz-range-thumb {
+    box-shadow: 0px 0px 3px var(--slider-bar-border-color),
+        0px 0px 4px var(--slider-bar-border-color);
+    border: 3px solid var(--slider-thumb-border-color);
+    height: 20px;
+    width: 20px;
+    border-radius: 13px;
+    background: var(--slider-thumb-color);
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+    margin-top: -5.6px;
+}
+
+#app .right-sidebar .depth-panel .depth-panel-body .depth-label {
+    text-align: right;
+    font-weight: 400;
+    font-size: 9px;
+    color: var(--menu-layer-label);
+}
+
+/* bitacora */
+#app .bitacora-container {
+    position: absolute;
+    height: 600px;
+    width: 516px;
+    left: 50%;
+    top: 42%;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+    border: 1px solid var(--menu-layer-separation);
+    border-radius: 4px;
+    padding: 28px 2px 2px 2px;
+    background-color: var(--menu-group);
+    box-shadow: 0px 4px 8px rgb(0 0 0 / 25%);
+    z-index: 99999999999999999;
+}
+
+#app .bitacora-container.show {
+    visibility: visible;
+}
+
+#app .bitacora-container>span {
+    color: var(--menu-layer-label);
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+#app .bitacora-container>span:nth-child(1) {
+    right: 26px;
+}
+
+#app .bitacora-container #bitacora {
+    height: 100%;
+    width: 100%;
+    border: 1px solid var(--menu-layer-separation);
+}
+
+/* map buttons */
+
+/* fullscreen */
+#app #map .leaflet-control-fullscreen {
+    margin-bottom: 16px;
+}
+
+#app #map .toggle-fullscreen {
+    text-align: center;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+    width: 30px;
+}
+
+#app #map .toggle-fullscreen:after {
+    content: "\e85b";
+    font-family: "Material Symbols Rounded";
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--map-button);
+}
+
+#app #map .toggle-fullscreen:hover,
+#app #map .toggle-fullscreen:focus {
+    background-color: #f4f4f4;
+}
+
+/* zoom */
+#app #map .leaflet-control-zoom a.leaflet-control-zoom-in span,
+#app #map .leaflet-control-zoom a.leaflet-control-zoom-out span {
+    display: none;
+}
+
+#app #map .leaflet-control-zoom a.leaflet-control-zoom-in:after {
+    content: "\e145";
+    font-family: "Material Symbols Rounded";
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--map-button);
+    line-height: 30px;
+}
+
+#app #map .leaflet-control-zoom a.leaflet-control-zoom-out:after {
+    content: "\e15b";
+    font-family: "Material Symbols Rounded";
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--map-button);
+    line-height: 30px;
+}
+
+/* reset extent */
+#app #map .reset-extent-button {
+    text-align: center;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+    width: 30px;
+    margin: 2px 0;
+}
+
+#app #map .reset-extent-button:after {
+    content: "\e88a";
+    font-family: "Material Symbols Outlined";
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--map-button);
+}
+
+#app #map .reset-extent-button:hover,
+#app #map .reset-extent-button:focus {
+    background-color: #f4f4f4;
+}
+
+#app #map .leaflet-control-zoom-out,
+#app #map .leaflet-control-zoom-in {
+    color: var(--map-button);
+}
+
+/* toggle basemap */
+#app #map .leaflet-control-basemaps {
+    margin-top: 20px;
+}
+
+#app #map .toggle-basemap-panel {
+    text-align: center;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+    width: 30px;
+}
+
+#app #map .toggle-basemap-panel:after {
+    content: "\e55b";
+    font-family: "Material Symbols Outlined";
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--map-button);
+}
+
+#app #map .toggle-basemap-panel:hover,
+#app #map .toggle-basemap-panel:focus {
+    background-color: #f4f4f4;
+}
+
+#app #map .leaflet-control-container .leaflet-control>div.basemaps-panel {
+    width: 182px;
+    height: auto;
+}
+
+#app #map .basemaps-panel {
+    display: none;
+}
+
+#app #map .basemaps-panel.show {
+    display: block;
+    position: absolute;
+    top: -2px;
+    right: 36px;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    background-clip: padding-box;
+    margin: 0;
+    padding: 2px 6px;
+    background-color: #fff;
+    box-shadow: 0px 2px 4px 0px var(--leaflet-shadow);
+}
+
+#app #map .basemaps-panel .basemap-panel {
+    pointer-events: none;
+}
+
+#app #map .basemaps-panel .basemap-panel-body #basemapcontainer {
+    display: block;
+}
+
+#app #map .basemaps-panel .basemap-panel-body #basemapcontainer .basemap-layer {
+    display: flex;
+    flex-wrap: nowrap;
+    cursor: pointer;
+}
+
+#app #map .basemaps-panel .basemap-panel-body #basemapcontainer .basemap-layer input[type="radio"] {
+    margin-right: 8px;
+}
+
+/* toggle bitacora */
+#app #map .leaflet-control-bitacora {
+    margin-top: 20px;
+}
+
+#app #map .toggle-bitacora:after {
+    content: "\e7f4";
+    font-family: "Material Symbols Outlined";
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--map-button);
+    display: inline-block;
+}
+
+#app #map .toggle-bitacora {
+    text-align: center;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+    width: 30px;
+}
+
+#app #map .toggle-bitacora:hover,
+#app #map .toggle-bitacora:focus {
+    background-color: #f4f4f4;
+}
+
+#app #map .toggle-bitacora.new:before {
+    content: "";
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    background: red;
+    width: 6px;
+    height: 6px;
+    border-radius: 50px;
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+
+    20%,
+    60% {
+        transform: rotate(6deg);
+    }
+
+    40%,
+    80% {
+        transform: rotate(-6deg);
+    }
+}
+
+#app #map .toggle-bitacora.new:after {
+    animation-name: shake;
+    animation-timing-function: ease-in-out;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-delay: 0.5s;
+}
+
+/* toggle get feature */
+#app #map .leaflet-features {
+    margin-top: 20px;
+}
+
+#app #map .features-button:after {
+    content: "\e88e";
+    font-family: "Material Symbols Outlined";
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--map-button);
+}
+
+#app #map .features-button {
+    text-align: center;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+    width: 30px;
+}
+
+#app #map .features-button:hover,
+#app #map .features-button:focus {
+    background-color: #f4f4f4;
+}
+
+/* toggle measure area */
+#app #map .leaflet-measure-area {
+    margin-top: 2px;
+}
+
+#app #map .measure-area:after {
+    content: "\ea49";
+    font-family: "Material Symbols Rounded";
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--map-button);
+}
+
+#app #map .measure-area {
+    text-align: center;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+    width: 30px;
+}
+
+#app #map .measure-area:hover,
+#app #map .measure-area:focus {
+    background-color: #f4f4f4;
+}
+
+/* toggle measure line */
+#app #map .leaflet-measure-line {
+    margin-top: 2px;
+}
+
+#app #map .measure-line:after {
+    content: "\e41c";
+    font-family: "Material Symbols Rounded";
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--map-button);
+}
+
+#app #map .measure-line {
+    text-align: center;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+    width: 30px;
+}
+
+#app #map .measure-line:hover,
+#app #map .measure-line:focus {
+    background-color: #f4f4f4;
+}
+
+/* toggle graticule */
+#app #map .leaflet-control-graticule {
+    margin-top: 2px;
+}
+
+#app #map .toggle-graticule {
+    text-align: center;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+    width: 30px;
+}
+
+#app #map .toggle-graticule:after {
+    content: "\f015";
+    font-family: "Material Symbols Rounded";
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--map-button);
+}
+
+#app #map .toggle-graticule:hover,
+#app #map .toggle-graticule:focus {
+    background-color: #f4f4f4;
+}
+
+/* toggle active panel */
+#app #map .leaflet-control-active-layers {
+    margin-top: 20px;
+}
+
+#app #map .toggle-active-panel {
+    text-align: center;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+    width: 30px;
+}
+
+#app #map .toggle-active-panel:after {
+    content: "\e53b";
+    font-family: "Material Symbols Rounded";
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--map-button);
+}
+
+#app #map .toggle-active-panel:hover,
+#app #map .toggle-active-panel:focus {
+    background-color: #f4f4f4;
+}
+
+/* export map png */
+#app #map .download-png-panel {
+    margin-top: 4px;
+    border: unset;
+    box-shadow: 0px 2px 4px 0px var(--leaflet-shadow);
+}
+
+#app #map .download-png-button {
+    text-align: center;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+    width: 30px;
+}
+
+#app #map .download-png-button:after {
+    content: "\efa2";
+    font-family: "Material Symbols Rounded";
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--map-button);
+}
+
+#app #map .download-png-button:hover,
+#app #map .download-png-button:focus {
+    background-color: #f4f4f4;
+}
+
+#app #map .download-png-panel .download-png-button .download-png-info {
+    display: none;
+    padding: 12px;
+    position: absolute;
+    right: 34px;
+    top: 0;
+    background-color: #fff;
+}
+
+#app #map .download-png-panel .download-png-button .download-png-info input {
+    margin: 4px;
+    outline: unset;
+}
+
+#app #map .download-png-panel .download-png-button .download-png-info input[type="button"] {
+    float: right;
+    cursor: pointer;
+}
+
+#app #map .download-png-panel .download-png-button.show .download-png-info {
+    display: block;
+}
+
+/* Active map buttons */
+#app #map .leaflet-control-container .leaflet-control:not(.leaflet-control-graphicscale)>div:not(.basemaps-panel),
+#app #map .leaflet-control-container .leaflet-control:not(.leaflet-control-graphicscale)>a {
+    border: 2px solid transparent;
+    width: 34px;
+    /*height: 32px;*/
+}
+
+#app #map .leaflet-control-container .leaflet-control:not(.leaflet-control-graphicscale)>div:after,
+#app #map .leaflet-control-container .leaflet-control:not(.leaflet-control-graphicscale)>a:after {
+    line-height: 30px;
+}
+
+#app #map .leaflet-control-container .leaflet-control:not(.leaflet-control-graphicscale)>div:not(.basemaps-panel).isActive,
+#app #map .leaflet-control-container .leaflet-control:not(.leaflet-control-graphicscale)>a.isActive {
+    border-color: var(--main);
+}
+
+#app #map .leaflet-control-container .leaflet-control:not(.leaflet-control-graphicscale)>div.isActive:after,
+#app #map .leaflet-control-container .leaflet-control:not(.leaflet-control-graphicscale)>a.isActive:after {
+    color: var(--main);
+    font-weight: 500;
+}
+
+#app #map .leaflet-control-container .download-png-panel.leaflet-control .download-png-button.show {
+    border-color: var(--main);
+    color: var(--main);
+}
+
+#app #map .leaflet-control-container .download-png-panel.leaflet-control .download-png-button.show:after {
+    color: var(--main);
+}
+
+/* Custom measure styles */
+/*
+    #app #map .leaflet-marker-icon.total-popup-label.node-label.leaflet-zoom-animated.leaflet-interactive span {
+        color: #000 !important;
+        background-color: #FFF;
+        text-shadow: unset;
+    }
+
+    #app #map .leaflet-marker-icon.total-popup.leaflet-zoom-animated.leaflet-interactive .total-popup-content {
+        border-radius: unset;
+    }
+
+    #app #map .leaflet-marker-icon.total-popup.leaflet-zoom-animated.leaflet-interactive:before {
+        content: '\e5cd';
+        position: absolute;
+        left: -2px;
+        top: -2px;
+        font-family: "Material Symbols Rounded";
+        font-size: 16px;
+        font-weight: bold;
+    }
+*/
+
+/* Custom search */
+#app #map .leaflet-control-search {
+    height: 35px;
+}
+
+#app #map .leaflet-control-search:before {
+    content: "\e8b6";
+    position: absolute;
+    left: 4px;
+    font-family: "Material Symbols Rounded";
+    font-size: 22px;
+    color: var(--search-color);
+    pointer-events: none;
+}
+
+#app #map .leaflet-control-search input.custom-search {
+    outline: unset;
+    background-color: var(--search-background);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+    width: 192px;
+    height: 100%;
+    color: var(--search-color);
+    font-size: 14px;
+    line-height: 19px;
+    border-color: transparent;
+    padding-left: 32px;
+}
+
+/* Custom slider */
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 10px 0;
+    width: 100%;
+}
+
+input[type="range"]:focus {
+    outline: none;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 10px;
+    cursor: pointer;
+    border-radius: 25px;
+    border: 1px solid var(--slider-bar-border-color);
+    background: linear-gradient(to right,
+            var(--slider-bar-complete-color),
+            var(--slider-bar-complete-color)),
+        var(--slider-bar-empty-color);
+    background-size: var(--background-size, 0%) 100%;
+    background-repeat: no-repeat;
+}
+
+input[type="range"]::-moz-range-track {
+    width: 100%;
+    height: 10px;
+    cursor: pointer;
+    border-radius: 25px;
+    border: 1px solid var(--slider-bar-border-color);
+    background: linear-gradient(to right,
+            var(--slider-bar-complete-color),
+            var(--slider-bar-complete-color)),
+        var(--slider-bar-empty-color);
+    background-size: var(--background-size, 0%) 100%;
+    background-repeat: no-repeat;
+}
+
+input[type="range"]::-ms-track {
+    width: 100%;
+    height: 10px;
+    cursor: pointer;
+    border-radius: 25px;
+    border: 1px solid var(--slider-bar-border-color);
+    background: linear-gradient(to right,
+            var(--slider-bar-complete-color),
+            var(--slider-bar-complete-color)),
+        var(--slider-bar-empty-color);
+    background-size: var(--background-size, 0%) 100%;
+    background-repeat: no-repeat;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    box-shadow: 0px 0px 3px var(--slider-bar-border-color),
+        0px 0px 4px var(--slider-bar-border-color);
+    border: 3px solid var(--slider-thumb-border-color);
+    height: 20px;
+    width: 20px;
+    border-radius: 13px;
+    background: var(--slider-thumb-color);
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+    margin-top: -5.6px;
+}
+
+input[type="range"]::-moz-range-thumb {
+    box-shadow: 0px 0px 3px var(--slider-bar-border-color),
+        0px 0px 4px var(--slider-bar-border-color);
+    border: 3px solid var(--slider-thumb-border-color);
+    height: 20px;
+    width: 20px;
+    border-radius: 13px;
+    background: var(--slider-thumb-color);
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+    margin-top: -5.6px;
+}
+
+input[type="range"]::-moz-range-thumb {
+    box-shadow: 0px 0px 3px var(--slider-bar-border-color),
+        0px 0px 4px var(--slider-bar-border-color);
+    border: 3px solid var(--slider-thumb-border-color);
+    height: 20px;
+    width: 20px;
+    border-radius: 13px;
+    background: var(--slider-thumb-color);
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+    margin-top: -5.6px;
+}
+
+/* language */
+#map .leaflet-control-container .leaflet-top.leaflet-left .language-container {
+    z-index: 900;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+#map .leaflet-control-container .leaflet-top.leaflet-left .language-button {
+    width: 30px;
+    height: 33px;
+    background-color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#map .leaflet-control-container .leaflet-top.leaflet-left .language-button>span {
+    pointer-events: none;
+    font-size: 28px;
+    color: var(--map-button);
+}
+
+#map .leaflet-control-container .leaflet-top.leaflet-left .language-button .language-info {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    background-color: #007bc4;
+    border-radius: 88%;
+    width: 15px;
+    height: 15px;
+    color: white;
+    padding: 4px 3px;
+    line-height: 0.8;
+    font-size: 9px;
+    pointer-events: none;
+}
+
+#map .leaflet-control-container .leaflet-top.leaflet-left .language-container[data-state="0"] .language-panel {
+    display: none;
+}
+
+#map .leaflet-control-container .leaflet-top.leaflet-left .language-container[data-state="1"] .language-panel {
+    display: block;
+    position: absolute;
+    border-radius: 4px;
+    margin-top: 4px;
+    background: white;
+    padding: 12px 10px;
+    box-shadow: 0px 3px 8px -2px rgb(0 0 0 / 75%);
+    width: auto !important;
+    height: auto !important;
+}
+
+#map .leaflet-control-container .leaflet-top.leaflet-left .language-container[data-state="1"] .language-panel .language-panel-title {
+    font-size: 14px;
+    margin-left: 6px;
+    color: #007bc4;
+    display: none;
+}
+
+#map .leaflet-control-container .leaflet-top.leaflet-left .language-container .language-panel div {
+    display: flex;
+}
+
+#map .leaflet-control-container .leaflet-top.leaflet-left .language-container .language-panel div label {
+    font-size: 14px;
+    margin-left: 6px;
+    margin-bottom: unset;
+}
+
+#map .leaflet-control-container .leaflet-top.leaflet-left .language-container .language-panel div label.checked {
+    color: #007bc4;
+}
+
+#map .leaflet-control-container .leaflet-top.leaflet-left .language-container .language-panel input {
+    cursor: pointer;
+}
+
+#map .leaflet-control-container .leaflet-top.leaflet-left {
+    display: flex;
+}
+
+.leaflet-measure-lable .close {
+    top: -3px !important;
+}
+
+/* loader */
+.view-cover {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #3e3e3e;
+    z-index: 999999999999999999999999999999999999999;
+}
+
+.view-cover.loading {
+    display: block;
+}
+
+.view-cover.loading .leaflet-export-loader {
+    display: block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin: 50% auto;
+    transform: translateY(-50%);
+}
+
+.view-cover.loading .leaflet-export-loader div {
+    position: absolute;
+    top: 33px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: #fff;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.view-cover.loading .leaflet-export-loader div:nth-child(1) {
+    left: 8px;
+    animation: leaflet-export-step1 0.6s infinite;
+}
+
+.view-cover.loading .leaflet-export-loader div:nth-child(2) {
+    left: 8px;
+    animation: leaflet-export-step2 0.6s infinite;
+}
+
+.view-cover.loading .leaflet-export-loader div:nth-child(3) {
+    left: 32px;
+    animation: leaflet-export-step2 0.6s infinite;
+}
+
+.view-cover.loading .leaflet-export-loader div:nth-child(4) {
+    left: 56px;
+    animation: leaflet-export-step3 0.6s infinite;
+}
+
+@keyframes leaflet-export-step1 {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes leaflet-export-step3 {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(0);
+    }
+}
+
+@keyframes leaflet-export-step2 {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(24px, 0);
+    }
+}
+
+/* coordinates control */
+#map .cursor-container {
+    display: none;
+    background-color: rgba(60, 64, 67, 0.5);
+    padding: 4px;
+    border-radius: 3px;
+    color: white;
+    position: absolute;
+    /*top: -13px;
+    left: 68px;*/
+    top: -54px;
+    right: 0;
+    width: 334px;
+    height: auto;
+    font-size: 12px;
+    line-height: 15px;
+}
+
+#map .cursor-container.open {
+    display: flex;
+}
+
+#map .cursor-container>div {
+    width: auto !important;
+}
+
+#map .cursor-container .coordinates-icon {
+    background-image: url(../svg/coordinates.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 24px !important;
+    height: 24px !important;
+    position: relative;
+}
+
+#map .cursor-container .coordinates-icon:after {
+    content: "";
+    width: 2px;
+    height: 22px;
+    background-color: white;
+    position: absolute;
+    right: -9px;
+}
+
+#map .cursor-container .coordinates-values {
+    padding: 4px;
+    margin: 0 14px;
+}
+
+#map .leaflet-control-container .leaflet-bottom.leaflet-left {
+    z-index: 999;
+}

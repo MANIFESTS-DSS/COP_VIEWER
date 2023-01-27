@@ -1,0 +1,735 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Crisis xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Tree>
+        <EpisodeId>1</EpisodeId>
+        <BeginTime></BeginTime>
+        <EndTime></EndTime>
+        <LatLonBoundingBox minx="-10" miny="41.8" maxx="-6.9" maxy="44.2"></LatLonBoundingBox>
+        <Panel type="simple" label="_('cartografia')">
+            <LayerGroup group="_('xeografia_fisica')">
+                <Layer queryable="1">
+                    <Name>emodnet:mean_atlas_land</Name>
+                    <Title>_('batimetria')</Title>
+                    <Url>https://ows.emodnet-bathymetry.eu/wms</Url>
+                    <LatLonBoundingBox minx="-9.365" miny="41.866" maxx="-7.03" maxy="43.573"/>
+                    <SRS>EPSG:4326</SRS>
+                    <LayerType>0</LayerType>
+                </Layer>
+                <Layer queryable="1">
+                    <Name>INTECGEO:RiosWGS84</Name>
+                    <Title>_('rios')</Title>
+                    <Url>http://ww3.intecmar.gal:8080/geoserver/wms</Url>
+                    <LatLonBoundingBox minx="-9.278" miny="41.809" maxx="-6.735" maxy="43.756"/>
+                    <SRS>EPSG:4326</SRS>
+                    <LayerType>0</LayerType>
+                </Layer>
+                <Layer queryable="1">
+                    <Name>INTECGEO:EncorosWGS84</Name>
+                    <Title>_('embalses')</Title>
+                    <Url>http://ww3.intecmar.gal:8080/geoserver/wms</Url>
+                    <LatLonBoundingBox minx="-9.073" miny="41.904" maxx="-6.808" maxy="43.678"/>
+                    <SRS>EPSG:4326</SRS>
+                    <LayerType>0</LayerType>
+                </Layer>
+                <Layer queryable="1">
+                    <Name>SR:SeaBedArea</Name>
+                    <Title>_('tipos_de_fondo')</Title>
+                    <Url>http://www.intecmar.gal/wms-inspire/SR/wms</Url>
+                    <LatLonBoundingBox minx="-9.365" miny="41.866" maxx="-7.036" maxy="43.809"/>
+                    <SRS>EPSG:4326</SRS>
+                    <LayerType>0</LayerType>
+                </Layer>
+            </LayerGroup>
+            <LayerGroup group="_('unidades_administrativas')">
+                <Layer queryable="1">
+                    <Name>AM:ZonasPuertosEstado</Name>
+                    <Title>_('zonas_portos')</Title>
+                    <Url>http://www.intecmar.gal/wms/AM/wms</Url>
+                    <LatLonBoundingBox minx="-9.305" miny="41.854" maxx="-7.022" maxy="43.797"/>
+                    <SRS>EPSG:4326</SRS>
+                    <LayerType>0</LayerType>
+                </Layer>
+                <Layer queryable="1">
+                    <Name>AU:ConcellosCostaCamgal</Name>
+                    <Title>_('concellos_costa')</Title>
+                    <Url>http://www.intecmar.gal/wms/AU/wms</Url>
+                    <LatLonBoundingBox minx="-9.305" miny="41.854" maxx="-7.022" maxy="43.797"/>
+                    <SRS>EPSG:4326</SRS>
+                    <LayerType>0</LayerType>
+                </Layer>
+                <Layer queryable="1">
+                    <Name>INTECGEO:Nucleos_Poblacion</Name>
+                    <Title>_('nucleos_poblacion')</Title>
+                    <Url>http://ww3.intecmar.gal:8080/geoserver/wms</Url>
+                    <LatLonBoundingBox minx="-9.268" miny="41.846" maxx="-6.831" maxy="43.745"/>
+                    <SRS>EPSG:4326</SRS>
+                    <LayerType>0</LayerType>
+                </Layer>
+            </LayerGroup>
+            <LayerGroup group="_('nomes_xeograficos')">
+                <Layer queryable="1">
+                    <Name>GN:ToponimiaCostera</Name>
+                    <Title>_('toponimia')</Title>
+                    <Url>http://www.intecmar.gal/wms/GN/wms?</Url>
+                    <LatLonBoundingBox minx="-9.304" miny="41.85" maxx="-7.012" maxy="43.797"/>
+                    <SRS>EPSG:4326</SRS>
+                    <LayerType>0</LayerType>
+                </Layer>
+            </LayerGroup>
+            <LayerGroup group="_('cartas_nauticas')">
+                <Layer queryable="1">
+                    <Name>TN:CorredorFisterra</Name>
+                    <Title>_('corredor')</Title>
+                    <Url>http://www.intecmar.gal/wms/TN/wms</Url>
+                    <LatLonBoundingBox minx="-9.305" miny="41.854" maxx="-7.022" maxy="43.797"/>
+                    <SRS>EPSG:4326</SRS>
+                    <LayerType>0</LayerType>
+                </Layer>
+                <Layer queryable="0">
+                    <Name>ENC_ES3</Name>
+                    <Title>_('cartas_especificas')</Title>
+                    <Url>http://ideihm.covam.es/wms/cartaENCp3?</Url>
+                    <LatLonBoundingBox minx="-9.4" miny="42.1" maxx="-6.8" maxy="43.8"/>
+                    <SRS>EPSG:4326</SRS>
+                    <LayerType>0</LayerType>
+                </Layer>
+                <Layer queryable="0">
+                    <Name>ENC_ES4</Name>
+                    <Title>_('cartas_intermedias')</Title>
+                    <Url>http://ideihm.covam.es/wms/cartaENCp4?</Url>
+                    <LatLonBoundingBox minx="-9.6" miny="41.8" maxx="-6.6" maxy="44"/>
+                    <SRS>EPSG:4326</SRS>
+                    <LayerType>0</LayerType>
+                </Layer>
+                <Layer queryable="0">
+                    <Name>ENC_ES5</Name>
+                    <Title>_('cartas_xerais')</Title>
+                    <Url>http://ideihm.covam.es/wms/cartaENCp5?</Url>
+                    <LatLonBoundingBox minx="-11" miny="41.5" maxx="-3.3" maxy="45.5"/>
+                    <SRS>EPSG:4326</SRS>
+                    <LayerType>0</LayerType>
+                </Layer>
+            </LayerGroup>
+        </Panel>
+        <Panel type="simple" label="_('recursos')">
+            <LayerGroup group="_('recursos_pesq')">
+                <Layer queryable="1">
+                    <Name>UTPB:BANCOS_POL,UTPB:CENTROIDE,UTPB:BANCOS_LIN</Name>
+                    <Title>_('bancos')</Title>
+                    <Url>http://ww3.intecmar.gal:8080/geoserver/wms</Url>
+                    <LatLonBoundingBox minx="-9.29" miny="42.098" maxx="-7.029" maxy="43.794"/>
+                    <SRS>EPSG:4326</SRS>
+                    <LayerType>0</LayerType>
+                    <Style>UTPB_Bancos_Modal_2020,UTPB_Bancos_lbl_Nombre,UTPB_Bancos_Lineas_Modal_2020</Style>
+                </Layer>
+                <Layer queryable="1">
+                    <Name>INTECGEO:Poligonos_WGS84</Name>
+                    <Title>_('poligonos')</Title>
+                    <Url>http://ww3.intecmar.gal:8080/geoserver/wms</Url>
+                    <LatLonBoundingBox minx="-9.049" miny="42.139" maxx="-8.248" maxy="43.404"/>
+                    <SRS>EPSG:4326</SRS>
+                    <LayerType>0</LayerType>
+                </Layer>
+                <Layer queryable="1">
+                    <Name>INTECGEO:Bateas_WGS84</Name>
+                    <Title>_('bateas')</Title>
+                    <Url>http://ww3.intecmar.gal:8080/geoserver/wms</Url>
+                    <LatLonBoundingBox minx="-9.047" miny="42.14" maxx="-8.249" maxy="43.403"/>
+                    <SRS>EPSG:4326</SRS>
+                    <LayerType>0</LayerType>
+                </Layer>
+                <Layer queryable="1">
+                    <Name>BU:Cofradias</Name>
+                    <Title>_('cofradias')</Title>
+                    <Url>http://www.intecmar.gal/wms/BU/wms?</Url>
+                    <LatLonBoundingBox minx="-9.265" miny="41.881" maxx="-7.03" maxy="43.746"/>
+                    <SRS>EPSG:4326</SRS>
+                    <LayerType>0</LayerType>
+                </Layer>
+            </LayerGroup>
+            <LayerGroup group="_('recursos_med')">
+                <Layer queryable="0">
+                    <Name>9</Name>
+                    <Title>_('ENIL')</Title>
+                    <Url>https://ideg.xunta.gal/servizos/services/IDE_DHGC/PHGC2015_2021_ZProtex_NEstatalAut/MapServer/WMSServer</Url>
+                    <LatLonBoundingBox minx="-9.305297" miny="42.025934" maxx="-7.049880" maxy="43.797917"/>
+                    <SRS>CRS:84</SRS>
+                    <LayerType>0</LayerType>
+                </Layer>
+                <Layer queryable="0">
+                    <Name>8</Name>
+                    <Title>_('EPIN')</Title>
+                    <Url>https://ideg.xunta.gal/servizos/services/IDE_DHGC/PHGC2015_2021_ZProtex_NEstatalAut/MapServer/WMSServer</Url>
+                    <LatLonBoundingBox minx="-9.305297" miny="42.025934" maxx="-7.049880" maxy="43.797917"/>
+                    <SRS>CRS:84</SRS>
+                    <LayerType>0</LayerType>
+                </Layer>
+                <Layer queryable="1">
+                    <Name>UTPB:CEDEIRA</Name>
+                    <Title>_('Cedeira')</Title>
+                    <Url>http://ww3.intecmar.gal:8080/geoserver/wms</Url>
+                    <LatLonBoundingBox minx="-8.09" miny="43.682" maxx="-8.039" maxy="43.625"/>
+                    <SRS>EPSG:23029</SRS>
+                    <LayerType>0</LayerType>
+                </Layer>
+                <Layer queryable="1">
+                    <Name>UTPB:LIRA</Name>
+                    <Title>_('Lira')</Title>
+                    <Url>http://ww3.intecmar.gal:8080/geoserver/wms</Url>
+                    <LatLonBoundingBox minx="-9.18" miny="42.784" maxx="-9.104" maxy="42.842"/>
+                    <SRS>EPSG:23029</SRS>
+                    <LayerType>0</LayerType>
+                </Layer>
+                <Layer queryable="1">
+                    <Name>INTECGEO:ZEPA</Name>
+                    <Title>_('zepa')</Title>
+                    <Url>http://ww3.intecmar.gal:8080/geoserver/wms</Url>
+                    <LatLonBoundingBox minx="-9.221" miny="41.809" maxx="-6.808" maxy="43.767"/>
+                    <SRS>EPSG:4326</SRS>
+                    <LayerType>0</LayerType>
+                </Layer>
+                <Layer queryable="1">
+                    <Name>INTECGEO:LIC</Name>
+                    <Title>_('lic')</Title>
+                    <Url>http://ww3.intecmar.gal:8080/geoserver/wms</Url>
+                    <LatLonBoundingBox mminx="-9.302" miny="41.807" maxx="-6.755" maxy="43.79"/>
+                    <SRS>EPSG:4326</SRS>
+                    <LayerType>0</LayerType>
+                </Layer>
+                <Layer queryable="1">
+                    <Name>INTECGEO:Parques_Naturales</Name>
+                    <Title>_('parques_naturales')</Title>
+                    <Url>http://ide1.intecmar.gal/geoserver/INTECGEO/wms?</Url>
+                    <LatLonBoundingBox minx="-9.065" miny="41.809" maxx="-6.808" maxy="43.439"/>
+                    <SRS>EPSG:4326</SRS>
+                    <LayerType>0</LayerType>
+                </Layer>
+                <Layer queryable="1">
+                    <Name>INTECGEO:Parques_Nacionales</Name>
+                    <Title>_('parques_nacionales')</Title>
+                    <Url>http://ww3.intecmar.gal:8080/geoserver/wms</Url>
+                    <LatLonBoundingBox minx="-9.066" miny="42.165" maxx="-8.778" maxy="42.625"/>
+                    <SRS>EPSG:4326</SRS>
+                    <LayerType>0</LayerType>
+                </Layer>
+                <Layer queryable="1">
+                    <Name>HB:ESI</Name>
+                    <Title>_('esi')</Title>
+                    <Url>http://www.intecmar.gal/wms/HB/wms?</Url>
+                    <LatLonBoundingBox minx="-9.301" miny="41.871" maxx="-7.035" maxy="43.79"/>
+                    <SRS>EPSG:4326</SRS>
+                    <LayerType>0</LayerType>
+                </Layer>
+            </LayerGroup>
+        </Panel>
+        <Panel type="simple" label="_('inventario_costeiro')">
+            <LayerGroup group="_('inventario_costeiro')">
+                <Layer queryable="1">
+                    <Name>PARC:infraestruturas</Name>
+                    <Title>_('instalacions')</Title>
+                    <Url>http://ide1.intecmar.gal/geoserver/wms</Url>
+                    <LatLonBoundingBox minx="-9.278" miny="41.809" maxx="-6.735" maxy="43.756"/>
+                    <LayerType>0</LayerType>
+                </Layer>
+                <Layer queryable="1">
+                    <Name>PARC:arcopol_vector_wgs84</Name>
+                    <Title>_('estradas_veh')</Title>
+                    <Url>http://ide1.intecmar.gal/geoserver/wms</Url>
+                    <LatLonBoundingBox minx="-9.278" miny="41.809" maxx="-6.735" maxy="43.756"/>
+                    <LayerType>0</LayerType>
+                    <Style>PARC_vector_vehiculo</Style>
+                </Layer>
+                <Layer queryable="1">
+                    <Name>PARC:arcopol_vector_wgs84</Name>
+                    <Title>_('estradas_mat')</Title>
+                    <Url>http://ide1.intecmar.gal/geoserver/wms</Url>
+                    <LatLonBoundingBox minx="-9.278" miny="41.809" maxx="-6.735" maxy="43.756"/>
+                    <LayerType>0</LayerType>
+                </Layer>
+                <Layer queryable="1">
+                    <Name>PARC:arcopol_coidos_wgs84</Name>
+                    <Title>_('coidos')</Title>
+                    <Url>http://ide1.intecmar.gal/geoserver/wms</Url>
+                    <LatLonBoundingBox minx="-9.278" miny="41.809" maxx="-6.735" maxy="43.756"/>
+                    <LayerType>0</LayerType>
+                </Layer>
+                <Layer queryable="1">
+                    <Name>PARC:arcopol_acumulos_wgs84</Name>
+                    <Title>_('acumulos')</Title>
+                    <Url>http://ide1.intecmar.gal/geoserver/wms</Url>
+                    <LatLonBoundingBox minx="-9.278" miny="41.809" maxx="-6.735" maxy="43.756"/>
+                    <LayerType>0</LayerType>
+                </Layer>
+                <Layer queryable="1">
+                    <Name>PARC:arcopol_portos_wgs84</Name>
+                    <Title>_('portos')</Title>
+                    <Url>http://ide1.intecmar.gal/geoserver/wms</Url>
+                    <LatLonBoundingBox minx="-9.278" miny="41.809" maxx="-6.735" maxy="43.756"/>
+                    <LayerType>0</LayerType>
+                </Layer>
+                <Layer queryable="1">
+                    <Name>PARC:arcopol_praias_wgs84</Name>
+                    <Title>_('praias')</Title>
+                    <Url>http://ide1.intecmar.gal/geoserver/wms</Url>
+                    <LatLonBoundingBox minx="-9.278" miny="41.809" maxx="-6.735" maxy="43.756"/>
+                    <LayerType>0</LayerType>
+                </Layer>
+            </LayerGroup>
+        </Panel>
+        <Panel type="simple" label="_('limpeza')">
+            <LayerGroup group="_('limpeza')">
+                <Layer queryable="1">
+                    <Name> AM:AtlasLimpieza</Name>
+                    <Title>_('limpeza')</Title>
+                    <Url>http://www.intecmar.gal/wms/AM/wms?</Url>
+                    <LatLonBoundingBox minx="-9.278" miny="41.809" maxx="-6.735" maxy="43.756"/>
+                    <LayerType>0</LayerType>
+                </Layer>
+            </LayerGroup>
+        </Panel>
+        <Panel type="simple" label="_('radar_hf')">
+            <LayerGroup group="_('radar_hf')">
+                <Layer queryable="1">
+                    <Name>surface_sea_water_velocity</Name>
+                    <Title>_('radar_hf') + ' Galicia'</Title>
+                    <Url>http://opendap.intecmar.gal/thredds/wms/aggregated/HFR_TV_last5days_Galicia_6000m_hourly.nc?</Url>
+                    <LatLonBoundingBox minx="-11" miny="41" maxx="-7" maxy="45"/>
+                    <LayerType>5</LayerType>
+                    <Style>prettyvec/rainbow</Style>
+                </Layer>
+            </LayerGroup>
+        </Panel>
+        <Panel type="model" label="_('predicion')">
+            <LayerGroup group="_('wind')">
+                <Layer queryable="0">
+                    <Name>Wind MeteoGalicia-WRF-Galicia Intensity</Name>
+                    <Title>_('wind') + ': ' + _('intensidade') + ' (m/s)'</Title>
+                    <Url>http://aquasafe.intecmar.gal/WMSServer/wms.ashx?</Url>
+                    <LatLonBoundingBox minx="-11.5" miny="40.3" maxx="-5.10" maxy="45.20"/>
+                    <LayerType>2</LayerType>
+                </Layer>
+                <Layer queryable="0">
+                    <Name>Wind MeteoGalicia-WRF-Galicia Direction</Name>
+                    <Title>_('wind') + ': ' + _('direccion')</Title>
+                    <Url>http://aquasafe.intecmar.gal/WMSServer/wms.ashx?</Url>
+                    <LatLonBoundingBox minx="-11.5" miny="40.3" maxx="-5.10" maxy="45.20"/>
+                    <LayerType>3</LayerType>
+                </Layer>
+                <Layer queryable="0">
+                    <Name>Wind MeteoGalicia-WRF-RiasBaixas Intensity</Name>
+                    <Title>_('wind') + ' Rías Baixas'+ ': ' + _('intensidade') + ' (m/s)'</Title>
+                    <Url>http://aquasafe.intecmar.gal/WMSServer/wms.ashx?</Url>
+                    <LatLonBoundingBox minx="-10" miny="41.40" maxx="-8" maxy="43.1"/>
+                    <LayerType>2</LayerType>
+                </Layer>
+                <Layer queryable="0">
+                    <Name>Wind MeteoGalicia-WRF-RiasBaixas Direction</Name>
+                    <Title>_('wind') + ' Rías Baixas'+ ': ' + _('direccion')</Title>
+                    <Url>http://aquasafe.intecmar.gal/WMSServer/wms.ashx?</Url>
+                    <LatLonBoundingBox minx="-10" miny="41.40" maxx="-8" maxy="43.1"/>
+                    <LayerType>3</LayerType>
+                </Layer>
+                <Layer queryable="0">
+                    <Name>Wind MeteoGalicia-WRF-Artabro Intensity</Name>
+                    <Title>_('wind') + ' Ártabro'+ ': ' + _('intensidade') + ' (m/s)'</Title>
+                    <Url>http://aquasafe.intecmar.gal/WMSServer/wms.ashx?</Url>
+                    <LatLonBoundingBox minx="-9.20" miny="43.08" maxx="-7.75" maxy="44"/>
+                    <LayerType>2</LayerType>
+                </Layer>
+                <Layer queryable="0">
+                    <Name>Wind MeteoGalicia-WRF-Artabro Direction</Name>
+                    <Title>_('wind') + ' Ártabro'+ ': ' + _('direccion')</Title>
+                    <Url>http://aquasafe.intecmar.gal/WMSServer/wms.ashx?</Url>
+                    <LatLonBoundingBox minx="-9.20" miny="43.08" maxx="-7.75" maxy="44"/>
+                    <LayerType>3</LayerType>
+                </Layer>
+            </LayerGroup>
+            <LayerGroup group="_('correntes')">
+                <Layer queryable="0">
+                    <Name>Currents MeteoGalicia-ROMS-Galicia Intensity</Name>
+                    <Title>_('correntes') + ' Galicia: ' + _('intensidade') + ' (m/s)'</Title>
+                    <Url>http://aquasafe.intecmar.gal/WMSServer/wms.ashx?</Url>
+                    <LatLonBoundingBox minx="-14.5" miny="38" maxx="-4.3" maxy="46"/>
+                    <LayerType>2</LayerType>
+                </Layer>
+                <Layer queryable="0">
+                    <Name>Currents MeteoGalicia-ROMS-Galicia Direction</Name>
+                    <Title>_('correntes') + ' Galicia: ' + _('direccion')</Title>
+                    <Url>http://aquasafe.intecmar.gal/WMSServer/wms.ashx?</Url>
+                    <LatLonBoundingBox minx="-14.5" miny="38" maxx="-4.3" maxy="46"/>
+                    <LayerType>3</LayerType>
+                </Layer>
+                <Layer queryable="0">
+                    <Name>Currents MeteoGalicia-MOHID-Vigo Intensity</Name>
+                    <Title>_('correntes') + ' Vigo-Po: ' + _('intensidade') + ' (m/s)'</Title>
+                    <Url>http://aquasafe.intecmar.gal/WMSServer/wms.ashx?</Url>
+                    <LatLonBoundingBox minx="-9.05" miny="42.06" maxx="-8.6" maxy="42.45"/>
+                    <LayerType>2</LayerType>
+                </Layer>
+                <Layer queryable="0">
+                    <Name>Currents MeteoGalicia-MOHID-Vigo Direction</Name>
+                    <Title>_('correntes') + ' Vigo-Po: ' + _('direccion')</Title>
+                    <Url>http://aquasafe.intecmar.gal/WMSServer/wms.ashx?</Url>
+                    <LatLonBoundingBox minx="-9.05" miny="42.06" maxx="-8.6" maxy="42.45"/>
+                    <LayerType>3</LayerType>
+                </Layer>
+                <Layer queryable="0">
+                    <Name>Currents MeteoGalicia-MOHID-Arousa Intensity</Name>
+                    <Title>_('correntes') + ' Arousa: ' + _('intensidade') + ' (m/s)'</Title>
+                    <Url>http://aquasafe.intecmar.gal/WMSServer/wms.ashx?</Url>
+                    <LatLonBoundingBox minx="-9.2" miny="42.3" maxx="-8.6" maxy="42.7"/>
+                    <LayerType>2</LayerType>
+                </Layer>
+                <Layer queryable="0">
+                    <Name>Currents MeteoGalicia-MOHID-Arousa Direction</Name>
+                    <Title>_('correntes') + ' Arousa: ' + _('direccion')</Title>
+                    <Url>http://aquasafe.intecmar.gal/WMSServer/wms.ashx?</Url>
+                    <LatLonBoundingBox minx="-9.2" miny="42.3" maxx="-8.6" maxy="42.7"/>
+                    <LayerType>3</LayerType>
+                </Layer>
+                <Layer queryable="0">
+                    <Name>Currents MeteoGalicia-MOHID-MurosNoia Intensity</Name>
+                    <Title>_('correntes') + ' Muros-Noia: ' + _('intensidade') + ' (m/s)'</Title>
+                    <Url>http://aquasafe.intecmar.gal/WMSServer/wms.ashx?</Url>
+                    <LatLonBoundingBox minx="-10" miny="41" maxx="-7.028" maxy="44"/>
+                    <LayerType>2</LayerType>
+                </Layer>
+                <Layer queryable="0">
+                    <Name>Currents MeteoGalicia-MOHID-MurosNoia Direction</Name>
+                    <Title>_('correntes') + ' Muros-Noia: ' + _('direccion')</Title>
+                    <Url>http://aquasafe.intecmar.gal/WMSServer/wms.ashx?</Url>
+                    <LatLonBoundingBox minx="-10" miny="41" maxx="-7.028" maxy="44"/>
+                    <LayerType>3</LayerType>
+                </Layer>
+                <Layer queryable="0">
+                    <Name>Currents MeteoGalicia-MOHID-Artabro Intensity</Name>
+                    <Title>_('correntes') + ' Ártabro'+ ': ' + _('intensidade') + ' (m/s)'</Title>
+                    <Url>http://aquasafe.intecmar.gal/WMSServer/wms.ashx?</Url>
+                    <LatLonBoundingBox minx="-8.80" miny="43.3" maxx="-8.1" maxy="43.5"/>
+                    <LayerType>2</LayerType>
+                </Layer>
+                <Layer queryable="0">
+                    <Name>Currents MeteoGalicia-MOHID-Artabro Direction</Name>
+                    <Title>_('correntes') + ' Ártabro'+ ': ' + _('direccion')</Title>
+                    <Url>http://aquasafe.intecmar.gal/WMSserver/wms.ashx?</Url>
+                    <LatLonBoundingBox minx="-8.80" miny="43.3" maxx="-8.1" maxy="43.5"/>
+                    <LayerType>3</LayerType>
+                </Layer>
+            </LayerGroup>
+            <LayerGroup group="_('temp_agua')">
+                <Layer queryable="0">
+                    <Name>Water Temperature MeteoGalicia-ROMS-Galicia</Name>
+                    <Title>_('temp_agua') + ' Galicia (ºC)'</Title>
+                    <Url>http://aquasafe.intecmar.gal/WMSServer/wms.ashx?</Url>
+                    <LatLonBoundingBox minx="-14.5" miny="38" maxx="-4.3" maxy="46"/>
+                    <LayerType>2</LayerType>
+                </Layer>
+                <Layer queryable="0">
+                    <Name>Water Temperature MeteoGalicia-MOHID-Vigo</Name>
+                    <Title>_('temp_agua') + ' Vigo-Pontevedra (ºC)'</Title>
+                    <Url>http://aquasafe.intecmar.gal/WMSServer/wms.ashx?</Url>
+                    <LatLonBoundingBox minx="-10" miny="41" maxx="-7.028" maxy="44"/>
+                    <LayerType>2</LayerType>
+                </Layer>
+                <Layer queryable="0">
+                    <Name>Water Temperature MeteoGalicia-MOHID-Arousa</Name>
+                    <Title>_('temp_agua') + ' Arousa (ºC)'</Title>
+                    <Url>http://aquasafe.intecmar.gal/WMSServer/wms.ashx?</Url>
+                    <LatLonBoundingBox minx="-10" miny="41" maxx="-7.028" maxy="44"/>
+                    <LayerType>2</LayerType>
+                </Layer>
+                <Layer queryable="0">
+                    <Name>Water Temperature MeteoGalicia-MOHID-MurosNoia</Name>
+                    <Title>_('temp_agua') + ' Muros-Noia (ºC)'</Title>
+                    <Url>http://aquasafe.intecmar.gal/WMSServer/wms.ashx?</Url>
+                    <LatLonBoundingBox minx="-10" miny="41" maxx="-7.028" maxy="44"/>
+                    <LayerType>2</LayerType>
+                </Layer>
+                <Layer queryable="0">
+                    <Name>Water Temperature MeteoGalicia-MOHID-Artabro</Name>
+                    <Title>_('temp_agua') + ' Ártabro (ºC)'</Title>
+                    <Url>http://aquasafe.intecmar.gal/WMSServer/wms.ashx?</Url>
+                    <LatLonBoundingBox minx="-10" miny="41" maxx="-7.028" maxy="44"/>
+                    <LayerType>2</LayerType>
+                </Layer>
+            </LayerGroup>
+            <LayerGroup group="_('salinidade')">
+                <Layer queryable="0">
+                    <Name>Salinity MeteoGalicia-ROMS-Galicia</Name>
+                    <Title>_('salinidade') + ' Galicia (PSU)'</Title>
+                    <Url>http://aquasafe.intecmar.gal/WMSServer/wms.ashx?</Url>
+                    <LatLonBoundingBox minx="-14.5" miny="38" maxx="-4.3" maxy="46"/>
+                    <LayerType>2</LayerType>
+                </Layer>
+                <Layer queryable="0">
+                    <Name>Salinity MeteoGalicia-MOHID-Vigo</Name>
+                    <Title>_('salinidade') + ' Vigo-Pontevedra (PSU)'</Title>
+                    <Url>http://aquasafe.intecmar.gal/WMSServer/wms.ashx?</Url>
+                    <LatLonBoundingBox minx="-10" miny="41" maxx="-7.028" maxy="44"/>
+                    <LayerType>2</LayerType>
+                </Layer>
+                <Layer queryable="0">
+                    <Name>Salinity MeteoGalicia-MOHID-Arousa</Name>
+                    <Title>_('salinidade') + ' Arousa (PSU)'</Title>
+                    <Url>http://aquasafe.intecmar.gal/WMSServer/wms.ashx?</Url>
+                    <LatLonBoundingBox minx="-10" miny="41" maxx="-7.028" maxy="44"/>
+                    <LayerType>2</LayerType>
+                </Layer>
+                <Layer queryable="0">
+                    <Name>Salinity MeteoGalicia-MOHID-MurosNoia</Name>
+                    <Title>_('salinidade') + ' Muros-Noia (PSU)'</Title>
+                    <Url>http://aquasafe.intecmar.gal/WMSServer/wms.ashx?</Url>
+                    <LatLonBoundingBox minx="-10" miny="41" maxx="-7.028" maxy="44"/>
+                    <LayerType>2</LayerType>
+                </Layer>
+                <Layer queryable="0">
+                    <Name>Salinity MeteoGalicia-MOHID-Artabro</Name>
+                    <Title>_('salinidade') + ' Ártabro (PSU)'</Title>
+                    <Url>http://aquasafe.intecmar.gal/WMSserver/wms.ashx?</Url>
+                    <LatLonBoundingBox minx="-10" miny="41" maxx="-7.028" maxy="44"/>
+                    <LayerType>2</LayerType>
+                </Layer>
+            </LayerGroup>
+            <LayerGroup group="_('onda')">
+                <Layer queryable="0">
+                    <Name>Wave Hs MeteoGalicia-WW3-Galicia</Name>
+                    <Title>_('onda') + ': ' + _('hs') + ' Galicia (m)'</Title>
+                    <Url>http://aquasafe.intecmar.gal/WMSServer/wms.ashx?</Url>
+                    <LatLonBoundingBox minx="-11" miny="41" maxx="-5.10" maxy="45.20"/>
+                    <LayerType>2</LayerType>
+                </Layer>
+                <Layer queryable="0">
+                    <Name>Mean Wave Period MeteoGalicia-WW3-Galicia</Name>
+                    <Title>_('onda') + ': ' + _('pOnda') + ' Galicia (s)'</Title>
+                    <Url>http://aquasafe.intecmar.gal/WMSServer/wms.ashx?</Url>
+                    <LatLonBoundingBox minx="-11" miny="41" maxx="-5.10" maxy="45.20"/>
+                    <LayerType>2</LayerType>
+                </Layer>
+                <Layer queryable="0">
+                    <Name>Mean Wave Direction MeteoGalicia-WW3-Galicia</Name>
+                    <Title>_('onda') + ': ' + _('dmar')+ ' Galicia (º)'</Title>
+                    <Url>http://aquasafe.intecmar.gal/WMSServer/wms.ashx?</Url>
+                    <LatLonBoundingBox minx="-11" miny="41" maxx="-5.10" maxy="45.20"/>
+                    <LayerType>3</LayerType>
+                </Layer>
+                <Layer queryable="0">
+                    <Name>Wave Hs MeteoGalicia-SWAN-Artabro</Name>
+                    <Title>_('onda') + ': ' + _('hs') + ' Ártabro (m)'</Title>
+                    <Url>http://aquasafe.intecmar.gal/WMSServer/wms.ashx?</Url>
+                    <LatLonBoundingBox minx="-8.7" miny="43.3" maxx="-8.10" maxy="43.70"/>
+                    <LayerType>2</LayerType>
+                </Layer>
+                <Layer queryable="0">
+                    <Name>Mean Wave Period MeteoGalicia-SWAN-Artabro</Name>
+                    <Title>_('onda') + ': ' + _('pOnda') + ' Ártabro (s)'</Title>
+                    <Url>http://aquasafe.intecmar.gal/WMSServer/wms.ashx?</Url>
+                    <LatLonBoundingBox minx="-8.7" miny="43.3" maxx="-8.10" maxy="43.70"/>
+                    <LayerType>2</LayerType>
+                </Layer>
+                <Layer queryable="0">
+                    <Name>Mean Wave Direction MeteoGalicia-SWAN-Artabro</Name>
+                    <Title>_('onda') + ': ' + _('dmar') + ' Ártabro (º)'</Title>
+                    <Url>http://aquasafe.intecmar.gal/WMSServer/wms.ashx?</Url>
+                    <LatLonBoundingBox minx="-8.7" miny="43.3" maxx="-8.10" maxy="43.70"/>
+                    <LayerType>3</LayerType>
+                </Layer>
+            </LayerGroup>
+            <LayerGroup group="_('temp_aire')">
+                <Layer queryable="0">
+                    <Name>Air Temperature MeteoGalicia-WRF-Galicia</Name>
+                    <Title>_('temp') + ' Galicia (ºC)'</Title>
+                    <Url>http://aquasafe.intecmar.gal/WMSServer/wms.ashx?</Url>
+                    <LatLonBoundingBox minx="-11.5" miny="40.3" maxx="-5.10" maxy="45.20"/>
+                    <LayerType>2</LayerType>
+                </Layer>
+            </LayerGroup>
+            <LayerGroup group="_('prec')">
+                <Layer queryable="0">
+                    <Name>Precipitation MeteoGalicia-WRF-Galicia</Name>
+                    <Title>_('prec') + ' Galicia (mm)'</Title>
+                    <Url>http://aquasafe.intecmar.gal/WMSServer/wms.ashx?</Url>
+                    <LatLonBoundingBox minx="-11.5" miny="40.3" maxx="-5.10" maxy="45.20"/>
+                    <LayerType>2</LayerType>
+                </Layer>
+            </LayerGroup>
+        </Panel>
+        <Panel type="simple" label="_('capas_ARiesgos')">
+            <LayerGroup group="_('perigos')">
+                <Layer queryable="1">
+                    <Name>NZ:CAMGAL-IP_SustPersistMedia</Name>
+                    <Title>_('persistencia_media')</Title>
+                    <Url>http://www.intecmar.gal/wms/NZ/wms</Url>
+                    <LatLonBoundingBox minx="-12.8" miny="40" maxx="-6" maxy="45.1"/>
+                    <LayerType>0</LayerType>
+                </Layer>
+                <Layer queryable="1">
+                    <Name>NZ:CAMGAL-IP_SustNoPersist</Name>
+                    <Title>_('non_persistente')</Title>
+                    <Url>http://www.intecmar.gal/wms/NZ/wms</Url>
+                    <LatLonBoundingBox minx="-12.8" miny="40" maxx="-6" maxy="45.1"/>
+                    <LayerType>0</LayerType>
+                </Layer>
+                <Layer queryable="1">
+                    <Name>NZ:CAMGAL-IP_SustPersistente</Name>
+                    <Title>_('persistente')</Title>
+                    <Url>http://www.intecmar.gal/wms/NZ/wms</Url>
+                    <LatLonBoundingBox minx="-12.8" miny="40" maxx="-6" maxy="45.1"/>
+                    <LayerType>0</LayerType>
+                </Layer>
+                <Layer queryable="1">
+                    <Name>NZ:CAMGAL-IP_TierraMar</Name>
+                    <Title>_('terra_mar')</Title>
+                    <Url>http://www.intecmar.gal/wms/NZ/wms</Url>
+                    <LatLonBoundingBox minx="-9.365" miny="41.866" maxx="-7.03" maxy="43.573"/>
+                    <LayerType>0</LayerType>
+                </Layer>
+            </LayerGroup>
+            <LayerGroup group="_('vulnerabilidade')">
+                <Layer queryable="1">
+                    <Name>NZ:CAMGAL-IV_Ambiental</Name>
+                    <Title>_('vulnera_ambiental')</Title>
+                    <Url>http://www.intecmar.gal/wms/NZ/wms</Url>
+                    <LatLonBoundingBox minx="-9.365" miny="41.866" maxx="-7.03" maxy="43.573"/>
+                    <LayerType>0</LayerType>
+                </Layer>
+                <Layer queryable="1">
+                    <Name>NZ:CAMGAL-IV_Socioeconomica</Name>
+                    <Title>_('vulnera_socioeconomica')</Title>
+                    <Url>http://www.intecmar.gal/wms/NZ/wms</Url>
+                    <LatLonBoundingBox minx="-9.365" miny="41.866" maxx="-7.03" maxy="43.573"/>
+                    <LayerType>0</LayerType>
+                </Layer>
+                <Layer queryable="1">
+                    <Name>NZ:CAMGAL-IV_Total</Name>
+                    <Title>_('vulnera_total')</Title>
+                    <Url>http://www.intecmar.gal/wms/NZ/wms</Url>
+                    <LatLonBoundingBox minx="-9.365" miny="41.866" maxx="-7.03" maxy="43.573"/>
+                    <LayerType>0</LayerType>
+                </Layer>
+            </LayerGroup>
+            <LayerGroup group="_('riscos')">
+                <Layer queryable="1">
+                    <Name>NZ:CAMGAL-IR_SustPersistMedia</Name>
+                    <Title>_('persistencia_media')</Title>
+                    <Url>http://www.intecmar.gal/wms/NZ/wms</Url>
+                    <LatLonBoundingBox minx="-9.365" miny="41.866" maxx="-7.03" maxy="43.573"/>
+                    <LayerType>0</LayerType>
+                </Layer>
+                <Layer queryable="1">
+                    <Name>NZ:CAMGAL-IR_SustNoPersist</Name>
+                    <Title>_('non_persistente')</Title>
+                    <Url>http://www.intecmar.gal/wms/NZ/wms</Url>
+                    <LatLonBoundingBox minx="-9.365" miny="41.866" maxx="-7.03" maxy="43.573"/>
+                    <LayerType>0</LayerType>
+                </Layer>
+                <Layer queryable="1">
+                    <Name>NZ:CAMGAL-IR_SustPersistente</Name>
+                    <Title>_('persistente')</Title>
+                    <Url>http://www.intecmar.gal/wms/NZ/wms</Url>
+                    <LatLonBoundingBox minx="-9.365" miny="41.866" maxx="-7.03" maxy="43.573"/>
+                    <LayerType>0</LayerType>
+                </Layer>
+                <Layer queryable="1">
+                    <Name>NZ:CAMGAL-IR_TierraMar</Name>
+                    <Title>_('terra_mar')</Title>
+                    <Url>http://www.intecmar.gal/wms/NZ/wms</Url>
+                    <LatLonBoundingBox minx="-9.365" miny="41.866" maxx="-7.03" maxy="43.573"/>
+                    <LayerType>0</LayerType>
+                </Layer>
+            </LayerGroup>
+            <LayerGroup group="_('PHGC2015-2021 Z. Protex. N. Estatal Aut.')">
+                <Layer queryable="1">
+                    <Name>1</Name>
+                    <Title>_('Perigosidade costeira pr500')</Title>
+                    <Url>https://ideg.xunta.gal/servizos/services/IDE_DHGC/D2007_60_MapasInundablesCosteiros_RASTER_perigosidade/MapServer/WMSServer</Url>
+                    <LatLonBoundingBox minx="-9.305297" miny="42.025934" maxx="-7.049880" maxy="43.797917"/>
+                    <LayerType>0</LayerType>
+                </Layer>
+                <Layer queryable="1">
+                    <Name>0</Name>
+                    <Title>_('Perigosidade costeira pr100')</Title>
+                    <Url>https://ideg.xunta.gal/servizos/services/IDE_DHGC/D2007_60_MapasInundablesCosteiros_RASTER_perigosidade/MapServer/WMSServer</Url>
+                    <LatLonBoundingBox minx="-9.305297" miny="42.025934" maxx="-7.049880" maxy="43.797917"/>
+                    <LayerType>0</LayerType>
+                </Layer>
+                <Layer queryable="1">
+                    <Name>12</Name>
+                    <Title>_('Risco área imp. medioamb. cost. pr500')</Title>
+                    <Url>https://ideg.xunta.gal/servizos/services/IDE_DHGC/D2007_60_MapasInundablesCosteiros/MapServer/WMSServer</Url>
+                    <LatLonBoundingBox minx="-9.305297" miny="42.025934" maxx="-7.049880" maxy="43.797917"/>
+                    <LayerType>0</LayerType>
+                </Layer>
+                <Layer queryable="1">
+                    <Name>11</Name>
+                    <Title>_('Risco área imp. medioamb. cost. pr100')</Title>
+                    <Url>https://ideg.xunta.gal/servizos/services/IDE_DHGC/D2007_60_MapasInundablesCosteiros/MapServer/WMSServer</Url>
+                    <LatLonBoundingBox minx="-9.305297" miny="42.025934" maxx="-7.049880" maxy="43.797917"/>
+                    <LayerType>0</LayerType>
+                </Layer>
+                <Layer queryable="1">
+                    <Name>10</Name>
+                    <Title>_('Risco ptos especial imp. cost. pr500')</Title>
+                    <Url>https://ideg.xunta.gal/servizos/services/IDE_DHGC/D2007_60_MapasInundablesCosteiros/MapServer/WMSServer</Url>
+                    <LatLonBoundingBox minx="-9.305297" miny="42.025934" maxx="-7.049880" maxy="43.797917"/>
+                    <LayerType>0</LayerType>
+                </Layer>
+                <Layer queryable="1">
+                    <Name>9</Name>
+                    <Title>_('Risco ptos especial imp. cost. pr100')</Title>
+                    <Url>https://ideg.xunta.gal/servizos/services/IDE_DHGC/D2007_60_MapasInundablesCosteiros/MapServer/WMSServer</Url>
+                    <LatLonBoundingBox minx="-9.305297" miny="42.025934" maxx="-7.049880" maxy="43.797917"/>
+                    <LayerType>0</LayerType>
+                </Layer>
+                <Layer queryable="1">
+                    <Name>8</Name>
+                    <Title>_('Risco activ. economica costeira pr500')</Title>
+                    <Url>https://ideg.xunta.gal/servizos/services/IDE_DHGC/D2007_60_MapasInundablesCosteiros/MapServer/WMSServer</Url>
+                    <LatLonBoundingBox minx="-9.305297" miny="42.025934" maxx="-7.049880" maxy="43.797917"/>
+                    <LayerType>0</LayerType>
+                </Layer>
+                <Layer queryable="1">
+                    <Name>7</Name>
+                    <Title>_('Risco activ. economica costeira pr100')</Title>
+                    <Url>https://ideg.xunta.gal/servizos/services/IDE_DHGC/D2007_60_MapasInundablesCosteiros/MapServer/WMSServer</Url>
+                    <LatLonBoundingBox minx="-9.305297" miny="42.025934" maxx="-7.049880" maxy="43.797917"/>
+                    <LayerType>0</LayerType>
+                </Layer>
+                <Layer queryable="1">
+                    <Name>6</Name>
+                    <Title>_('Risco poboación costeira pr500')</Title>
+                    <Url>https://ideg.xunta.gal/servizos/services/IDE_DHGC/D2007_60_MapasInundablesCosteiros/MapServer/WMSServer</Url>
+                    <LatLonBoundingBox minx="-9.305297" miny="42.025934" maxx="-7.049880" maxy="43.797917"/>
+                    <LayerType>0</LayerType>
+                </Layer>
+                <Layer queryable="1">
+                    <Name>5</Name>
+                    <Title>_('Risco poboación costeira pr100')</Title>
+                    <Url>https://ideg.xunta.gal/servizos/services/IDE_DHGC/D2007_60_MapasInundablesCosteiros/MapServer/WMSServer</Url>
+                    <LatLonBoundingBox minx="-9.305297" miny="42.025934" maxx="-7.049880" maxy="43.797917"/>
+                    <LayerType>0</LayerType>
+                </Layer>
+                <Layer queryable="1">
+                    <Name>4</Name>
+                    <Title>_('Lámina de inundación costeira pr500')</Title>
+                    <Url>https://ideg.xunta.gal/servizos/services/IDE_DHGC/D2007_60_MapasInundablesCosteiros/MapServer/WMSServer</Url>
+                    <LatLonBoundingBox minx="-9.305297" miny="42.025934" maxx="-7.049880" maxy="43.797917"/>
+                    <LayerType>0</LayerType>
+                </Layer>
+                <Layer queryable="1">
+                    <Name>3</Name>
+                    <Title>_('Lámina de inundación costeira pr100')</Title>
+                    <Url>https://ideg.xunta.gal/servizos/services/IDE_DHGC/D2007_60_MapasInundablesCosteiros/MapServer/WMSServer</Url>
+                    <LatLonBoundingBox minx="-9.305297" miny="42.025934" maxx="-7.049880" maxy="43.797917"/>
+                    <LayerType>0</LayerType>
+                </Layer>
+                <Layer queryable="1">
+                    <Name>2</Name>
+                    <Title>_('Tramos costeiros MAPRI')</Title>
+                    <Url>https://ideg.xunta.gal/servizos/services/IDE_DHGC/D2007_60_MapasInundablesCosteiros/MapServer/WMSServer</Url>
+                    <LatLonBoundingBox minx="-9.305297" miny="42.025934" maxx="-7.049880" maxy="43.797917"/>
+                    <LayerType>0</LayerType>
+                </Layer>
+            </LayerGroup>
+        </Panel>
+    </Tree>
+</Crisis>

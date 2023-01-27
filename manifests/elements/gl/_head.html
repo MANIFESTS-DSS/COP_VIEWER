@@ -1,0 +1,79 @@
+<head>
+    <title>Visor plancamgal</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+
+    <!-- load third party plugins -->
+    <script src="app/resources/plugins/leaflet/leaflet.js"></script>
+    <script src="app/resources/plugins/leaflet-timedimension/iso8601.min.js"></script>
+    <script src="app/resources/plugins/leaflet.nontiledlayer/NonTiledLayer_.js"></script>
+    <script src="app/resources/plugins/leaflet-timedimension/leaflet.timedimension.js"></script>
+    <script src="app/resources/plugins/AutoGraticule/L.AutoGraticule.js"></script>
+    <script src="app/resources/plugins/GraphicScale/Leaflet.GraphicScale.min.js"></script>
+    <script src="app/resources/plugins/Leaflet.LinearMeasurement/Leaflet.LinearMeasurement.js"></script>
+    <script src="app/resources/plugins/Leaflet.Measure/leaflet.measure.js"></script>
+    <script src="app/resources/plugins/html2canvas/html2canvas.min.js"></script>
+    <script src="app/resources/plugins/bootstrap-5.2.0/js/bootstrap.min.js"></script>
+
+    <!-- load third party styles -->
+    <link rel="stylesheet" href="app/resources/css/material.css" />
+    <link rel="stylesheet" href="app/resources/plugins/leaflet/leaflet.css" />
+    <link rel="stylesheet" href="app/resources/plugins/leaflet-timedimension/leaflet.timedimension.control.css" />
+    <link rel="stylesheet" href="app/resources/plugins/GraphicScale/Leaflet.GraphicScale.min.css" />
+    <link rel="stylesheet" href="app/resources/plugins/Leaflet.LinearMeasurement/Leaflet.LinearMeasurement.css" />
+    <link rel="stylesheet" href="app/resources/plugins/Leaflet.Measure/leaflet.measure.css" />
+    <link rel="stylesheet" href="app/resources/plugins/bootstrap-5.2.0/css/bootstrap.min.css" />
+
+    <!-- custom header -->
+    <link rel="stylesheet" media="all" href="elements/shared/style.css">
+    <link rel="stylesheet" media="all" href="elements/shared/bootstrap.min.css">
+    <style>
+        header {
+            height: 65px;
+            background-color: #007BC4;
+            display: flex;
+            width: 100%;
+        }
+
+        header .row {
+            height: 100%;
+        }
+
+        header .logo {
+            box-sizing: content-box;
+            background-image: url(elements/shared/logo_header.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            /* background-size: 62%; */
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        header a.link {
+            padding: 26px;
+            color: #fff;
+            width: 100%;
+            height: 100%;
+            background: url(elements/shared/Logo_xunta_2021.svg) no-repeat;
+            -webkit-background-size: 110px 110px;
+            background-size: 110px;
+            background-position: center;
+            display: block;
+        }
+
+        .panel {
+            width: 100%;
+            height: calc(100vh - 65px - 84px);
+        }
+
+        footer {
+            overflow-x: hidden;
+        }
+
+        @media (min-width: 991px) {
+            footer .footer {
+                padding: 24px 5% 24px 5%;
+            }
+        }
+    </style>
+</head>

@@ -1,0 +1,169 @@
+:root {
+    /* player */
+    --player-height: 55px;
+    --player-color: #2b2b2b;
+    --player-button-fill: #ffffff;
+    --player-button-icon: #007bc4;
+    --player-button-hover: #c9eeff;
+    --player-slider-bar: #000;
+    --player-slider-thumb: #ffffff;
+    --player-text: #ffffff;
+}
+
+#map-player {
+    width: max-content;
+    height: 100%;
+    margin: 0 auto;
+    display: none;
+}
+
+#map-player.show {
+    display: block;
+}
+
+#map-player .leaflet-bar-timecontrol {
+    border: unset;
+    box-shadow: unset;
+    float: unset;
+    padding: 12px;
+}
+
+/* animation control */
+#map-player .leaflet-bar-timecontrol {
+    pointer-events: all;
+}
+
+#map-player .timecontrol-speed:before {
+    content: unset;
+}
+
+#map-player .leaflet-bar-timecontrol .timecontrol-speed .speed {
+    width: 38px;
+    position: absolute;
+    bottom: 0;
+    right: 6px;
+}
+
+#map-player .leaflet-bar.leaflet-bar-horizontal.leaflet-bar-timecontrol.leaflet-control {
+    background-color: var(--player-color);
+    height: 48px;
+    padding: 2px;
+}
+
+#map-player .leaflet-bar-timecontrol .leaflet-control-timecontrol.timecontrol-backward {
+    border-radius: 50%;
+    height: 26px;
+    width: 26px;
+    margin-top: 5px;
+    position: relative;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+#map-player .leaflet-bar-timecontrol .leaflet-control-timecontrol.timecontrol-backward:before {
+    position: absolute;
+    top: -2px;
+    left: 1px;
+    width: 20px;
+    height: 20px;
+    color: var(--player-button-icon);
+    font-size: 14px;
+}
+
+#map-player .leaflet-bar-timecontrol .leaflet-control-timecontrol.timecontrol-play {
+    border-radius: 50%;
+    height: 32px;
+    width: 32px;
+    margin-top: 2px;
+}
+
+#map-player .leaflet-bar-timecontrol .leaflet-control-timecontrol.timecontrol-play:before {
+    top: 1px;
+    left: 2px;
+    color: var(--player-button-icon);
+}
+
+#map-player .leaflet-bar-timecontrol .leaflet-control-timecontrol.timecontrol-forward {
+    border-radius: 50%;
+    height: 26px;
+    width: 26px;
+    margin-top: 5px;
+    position: relative;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+#map-player .leaflet-bar-timecontrol .leaflet-control-timecontrol.timecontrol-forward:before {
+    position: absolute;
+    top: -2px;
+    right: 0px;
+    width: 20px;
+    height: 20px;
+    color: var(--player-button-icon);
+    font-size: 14px;
+}
+
+#map-player .leaflet-bar-timecontrol .leaflet-control-timecontrol.timecontrol-backward:hover,
+#map-player .leaflet-bar-timecontrol .leaflet-control-timecontrol.timecontrol-play:hover,
+#map-player .leaflet-bar-timecontrol .leaflet-control-timecontrol.timecontrol-forward:hover {
+    background-color: var(--player-button-hover);
+}
+
+#map-player .leaflet-bar-timecontrol .leaflet-control-timecontrol.timecontrol-date,
+#map-player .leaflet-bar-timecontrol .leaflet-control-timecontrol.timecontrol-slider.timecontrol-speed {
+    background-color: var(--player-color);
+    border: unset;
+    color: var(--player-slider-thumb);
+    margin-top: 2px;
+}
+
+#map-player .leaflet-bar-timecontrol .leaflet-control-timecontrol.timecontrol-slider.timecontrol-speed {
+    display: grid;
+    width: 66px;
+    box-sizing: border-box;
+}
+
+#map-player .leaflet-bar-timecontrol .leaflet-control-timecontrol.timecontrol-slider.timecontrol-speed .speed {
+    float: unset;
+    position: relative;
+    display: block;
+    order: 2;
+    width: 100%;
+}
+
+#map-player .leaflet-bar-timecontrol .leaflet-control-timecontrol.timecontrol-slider.timecontrol-speed .slider {
+    width: auto;
+    display: block;
+    order: 1;
+}
+
+#map-player .leaflet-bar-timecontrol .leaflet-control-timecontrol.timecontrol-slider.timecontrol-dateslider {
+    background-color: var(--player-color);
+    border: unset;
+    margin-top: 2px;
+    height: 100%;
+}
+
+#map-player .leaflet-bar-timecontrol .leaflet-control-timecontrol.timecontrol-slider.timecontrol-dateslider .slider,
+#map-player .leaflet-bar-timecontrol .leaflet-control-timecontrol.timecontrol-slider.timecontrol-speed .slider {
+    background-color: var(--player-slider-bar);
+    border: unset;
+    height: 6px;
+    margin-top: 12px;
+}
+
+#map-player .leaflet-bar-timecontrol .leaflet-control-timecontrol.timecontrol-slider.timecontrol-dateslider .slider .knob,
+#map-player .leaflet-bar-timecontrol .leaflet-control-timecontrol.timecontrol-slider.timecontrol-speed .slider .knob {
+    width: 6px;
+    margin-top: -5px;
+    height: 16px;
+    cursor: pointer;
+}
+
+#map-player .leaflet-bar-timecontrol .leaflet-control-timecontrol.timecontrol-slider.timecontrol-dateslider .slider .slider-barra {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 6px;
+    background: var(--player-button-icon);
+}

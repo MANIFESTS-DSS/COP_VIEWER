@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xsi:Crisis xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Tree>
+        <BeginTime>2022-09-13T00:00:00+02:00</BeginTime>
+        <EndTime>2022-09-16T00:00:00+02:00</EndTime>
+
+        <LatLonBoundingBox minx="-8.769741167441929" miny="43.303782308317906" maxx="-8.058376421348173" maxy="43.634671372826254"/>
+        <Panel label="_('cartografia')" type="simple">
+            <LayerGroup group="_('unidades_administrativas')">
+                <Layer queryable="1">
+                    <id>8ae4809a83309ede018330c1f6140000</id>
+                    <Name>AM:ZonasPuertosEstado</Name>
+                    <Title>_('zonas_portos')</Title>
+                    <LatLonBoundingBox minx="-9.305" miny="41.854" maxx="-7.022" maxy="43.797"/>
+                    <Style xsi:nil="true"/>
+                    <Filter xsi:nil="true"/>
+                    <LayerType>0</LayerType>
+                    <Url>http://www.intecmar.gal/wms/AM/wms</Url>
+                </Layer>
+                <Layer queryable="0">
+                    <id>8ae4809a83309ede018330f5791a0001</id>
+                    <Name>AU:ConcellosCostaCamgal</Name>
+                    <Title>_('concellos_costa')</Title>
+                    <LatLonBoundingBox minx="-9.305" miny="41.854" maxx="-7.022" maxy="43.797"/>
+                    <Style xsi:nil="true"/>
+                    <Filter xsi:nil="true"/>
+                    <LayerType>0</LayerType>
+                    <Url>http://www.intecmar.gal/wms/AU/wms</Url>
+                </Layer>
+            </LayerGroup>
+        </Panel>
+        <Panel label="_('limpeza')" type="simple">
+            <LayerGroup group="_('limpeza')">
+                <Layer queryable="1">
+                    <id>8ae4809a83309ede018330ffeba90002</id>
+                    <Name>AM:AtlasLimpieza</Name>
+                    <Title>_('limpeza')</Title>
+                    <LatLonBoundingBox minx="-6.0" miny="40.0" maxx="-9.0" maxy="44.0"/>
+                    <Style xsi:nil="true"/>
+                    <Filter xsi:nil="true"/>
+                    <LayerType>0</LayerType>
+                    <Url>http://www.intecmar.gal/wms/AM/wms?</Url>
+                </Layer>
+            </LayerGroup>
+        </Panel>
+        <Panel label="_('predicion')" type="model">
+            <LayerGroup group="_('wind')">
+                <Layer queryable="0">
+                    <id>8ae4808746145fc6014642032e890025</id>
+                    <Name>Wind MeteoGalicia-WRF-Artabro Intensity</Name>
+                    <Title>_('wind') + ' Ártabro'+ ': ' + _('intensidade') + ' (m/s)'</Title>
+                    <LatLonBoundingBox minx="-9.2" miny="42.0" maxx="-7.75" maxy="44.0"/>
+                    <Style xsi:nil="true"/>
+                    <Filter xsi:nil="true"/>
+                    <LayerType>2</LayerType>
+                    <Url>http://aquasafe.intecmar.gal/WMSServer/wms.ashx?</Url>
+                </Layer>
+                <Layer queryable="1">
+                    <id>8ae4808746145fc601464204ecf20026</id>
+                    <Name>Wind MeteoGalicia-WRF-Artabro Direction</Name>
+                    <Title>_('wind') + ' Ártabro'+ ': ' + _('direccion')</Title>
+                    <LatLonBoundingBox minx="-9.2" miny="42.0" maxx="-7.75" maxy="44.0"/>
+                    <Style xsi:nil="true"/>
+                    <Filter xsi:nil="true"/>
+                    <LayerType>3</LayerType>
+                    <Url>http://aquasafe.intecmar.gal/WMSServer/wms.ashx?</Url>
+                </Layer>
+            </LayerGroup>
+            <LayerGroup group="_('correntes')">
+                <Layer queryable="0">
+                    <id>8ae480874688965e0146897ea9810001</id>
+                    <Name>Currents MeteoGalicia-MOHID-Artabro Intensity</Name>
+                    <Title>_('correntes') + ' Ártabro'+ ': ' + _('intensidade') + ' (m/s)'</Title>
+                    <LatLonBoundingBox minx="-8.8" miny="43.3" maxx="-8.1" maxy="43.5"/>
+                    <Style xsi:nil="true"/>
+                    <Filter xsi:nil="true"/>
+                    <LayerType>2</LayerType>
+                    <Url>http://aquasafe.intecmar.gal/WMSServer/wms.ashx?</Url>
+                </Layer>
+                <Layer queryable="0">
+                    <id>8ae480874688965e0146898055ba0002</id>
+                    <Name>Currents MeteoGalicia-MOHID-Artabro Direction</Name>
+                    <Title>_('correntes') + ' Ártabro'+ ': ' + _('direccion')</Title>
+                    <LatLonBoundingBox minx="-8.8" miny="43.3" maxx="-8.1" maxy="43.5"/>
+                    <Style xsi:nil="true"/>
+                    <Filter xsi:nil="true"/>
+                    <LayerType>3</LayerType>
+                    <Url>http://aquasafe.intecmar.gal/WMSServer/wms.ashx?</Url>
+                </Layer>
+            </LayerGroup>
+        </Panel>
+        <Panel label="_('INCIDENTE')" type="simple">
+            <LayerGroup group="_('buoy')">
+                <Layer queryable="0">
+                    <id>8ae480874646a4be01464cf0fd0a002d</id>
+                    <Name>CRISIS:dft_mpt</Name>
+                    <Title>_('dft_etiquetas')</Title>
+                    <LatLonBoundingBox minx="-11.0" miny="41.0" maxx="-6.0" maxy="44.0"/>
+                    <Style>CRISIS_dft_mpt-lbl-fechas</Style>
+                    <Filter xsi:nil="true"/>
+                    <LayerType>0</LayerType>
+                    <Url>http://ide1.intecmar.org/geoserver/CRISIS/wms?</Url>
+                </Layer>
+                <Layer queryable="0">
+                    <id>8ae480874646a4be01464cf25893002e</id>
+                    <Name>CRISIS:dft_trc</Name>
+                    <Title>_('dft_traxectoria')</Title>
+                    <LatLonBoundingBox minx="-11.0" miny="41.0" maxx="-6.0" maxy="43.0"/>
+                    <Style xsi:nil="true"/>
+                    <Filter></Filter>
+                    <LayerType>0</LayerType>
+                    <Url>http://ide1.intecmar.org/geoserver/CRISIS/wms?</Url>
+                </Layer>
+                <Layer queryable="1" downloadable="1" downloadurl="http://SampleURLdescarga.org">
+                    <id>8ae48087469d2fc40146a4b2c5090011</id>
+                    <Name>CRISIS:dft_mpt</Name>
+                    <Title>_('dft_posicions')</Title>
+                    <LatLonBoundingBox minx="-9.305" miny="41.854" maxx="-7.022" maxy="43.797"/>
+                    <Style xsi:nil="true"/>
+                    <Filter></Filter>
+                    <LayerType>0</LayerType>
+                    <Url>http://ide1.intecmar.org/geoserver/CRISIS/wms?</Url>
+                </Layer>
+            </LayerGroup>
+            <LayerGroup group="_('sim')">
+                <Layer queryable="1">
+                    <id>8ae48087467ff98301468054218b0001</id>
+                    <Name>CRISIS:mod_mc</Name>
+                    <Title>_('mod_mc')</Title>
+                    <LatLonBoundingBox minx="-9.305" miny="41.854" maxx="-7.022" maxy="43.797"/>
+                    <Style xsi:nil="true"/>
+                    <Filter></Filter>
+                    <LayerType>1</LayerType>
+                    <Url>http://ide1.intecmar.org/geoserver/CRISIS/wms?</Url>
+                </Layer>
+                <Layer queryable="0">
+                    <id>8ae48087467ff98301468055ef560002</id>
+                    <Name>CRISIS:mod_mpt</Name>
+                    <Title>_('mod_particle')</Title>
+                    <LatLonBoundingBox minx="-9.305" miny="41.854" maxx="-7.022" maxy="43.797"/>
+                    <Style xsi:nil="true"/>
+                    <Filter>origin='SASEMAR20150720'</Filter>
+                    <LayerType>1</LayerType>
+                    <Url>http://ide1.intecmar.org/geoserver/CRISIS/wms?</Url>
+                </Layer>
+                <Layer queryable="1">
+                    <id>8ae48087468abf3101468af87b970000</id>
+                    <Name>CRISIS:mod_tmc</Name>
+                    <Title>_('mod_track')</Title>
+                    <LatLonBoundingBox minx="-9.305" miny="41.854" maxx="-7.022" maxy="43.797"/>
+                    <Style xsi:nil="true"/>
+                    <Filter>idsim='3'</Filter>
+                    <LayerType>4</LayerType>
+                    <Url>http://ide1.intecmar.org/geoserver/CRISIS/wms?</Url>
+                </Layer>
+                <Layer queryable="1">
+                    <id>8ae48087468abf3101468afae2180001</id>
+                    <Name>CRISIS:mod_env</Name>
+                    <Title>_('mod_envelope')</Title>
+                    <LatLonBoundingBox minx="-9.305" miny="41.854" maxx="-7.022" maxy="43.797"/>
+                    <Style xsi:nil="true"/>
+                    <Filter xsi:nil="true"/>
+                    <LayerType>1</LayerType>
+                    <Url>http://ide1.intecmar.org/geoserver/CRISIS/wms?</Url>
+                </Layer>
+                <Layer queryable="1">
+                    <id>8ae48087469d2fc40146a977fefa0014</id>
+                    <Name>CRISIS:mod_tmc,CRISIS:vmod_mc_notime</Name>
+                    <Title>_('mod_track_mc')</Title>
+                    <LatLonBoundingBox minx="-9.305" miny="41.854" maxx="-6.0" maxy="43.797"/>
+                    <Style></Style>
+                    <Filter>origin='ONS20150925';origin='ONS20150925'</Filter>
+                    <LayerType>4</LayerType>
+                    <Url>http://ide1.intecmar.org/geoserver/CRISIS/wms?</Url>
+                </Layer>
+                <Layer queryable="1">
+                    <id>8ae4809a83310eb50183317a310a0018</id>
+                    <Name>CAMGAL:v_aloha_plume</Name>
+                    <Title>_('aloha: toxic area')</Title>
+                    <LatLonBoundingBox minx="-9.305" miny="41.854" maxx="-7.022" maxy="43.797"/>
+                    <Style xsi:nil="true"/>
+                    <Filter xsi:nil="true"/>
+                    <LayerType>0</LayerType>
+                    <Url>http://193.144.46.142//geoserver/CAMGAL/wms?</Url>
+                    <SRS>EPSG:4326</SRS>
+                </Layer>
+                <Layer queryable="1">
+                    <id>8ae480874ff99dc8014ff9c9759f0003</id>
+                    <Name>CRISIS:aloha</Name>
+                    <Title>_('aloha: flammable area')</Title>
+                    <LatLonBoundingBox minx="-9.305" miny="41.854" maxx="-7.022" maxy="43.797"/>
+                    <Style xsi:nil="true"/>
+                    <Filter>areatype='FLAMMABLE'</Filter>
+                    <LayerType>4</LayerType>
+                    <Url>http://ide1.intecmar.org/geoserver/CRISIS/wms?</Url>
+                </Layer>
+            </LayerGroup>
+            <LayerGroup group="_('operacions')">
+                <Layer queryable="1">
+                    <id>8ae4808748ac42f70148ac85c1e30002</id>
+                    <Name>CRISIS:Barreras</Name>
+                    <Title>_('barreiras')</Title>
+                    <LatLonBoundingBox minx="-15.0" miny="30.0" maxx="5.0" maxy="60.0"/>
+                    <Style xsi:nil="true"/>
+                    <Filter xsi:nil="true"/>
+                    <LayerType>4</LayerType>
+                    <Url>http://193.144.46.142/geoserver/CRISIS/wms?</Url>
+                    <SRS></SRS>
+                </Layer>
+                <Layer queryable="1">
+                    <id>8ae4808748ac42f70148acc0edb90006</id>
+                    <Name>CRISIS:Elementos</Name>
+                    <Title>_('elementos')</Title>
+                    <LatLonBoundingBox minx="-15.0" miny="30.0" maxx="5.0" maxy="60.0"/>
+                    <Style xsi:nil="true"/>
+                    <Filter xsi:nil="true"/>
+                    <LayerType>4</LayerType>
+                    <Url>http://193.144.46.142/geoserver/CRISIS/wms?</Url>
+                </Layer>
+            </LayerGroup>
+        </Panel>
+    </Tree>
+</xsi:Crisis>

@@ -1,0 +1,274 @@
+#app #map nav {
+    position: absolute;
+    right: 60px;
+    outline: unset;
+    padding: 0;
+    width: auto;
+    background-color: transparent !important;
+    box-shadow: unset !important;
+    display: none;
+}
+
+#app #map nav button {
+    border: unset;
+    border-radius: unset;
+    box-shadow: 0px 2px 4px 0px var(--leaflet-shadow);
+    width: 36px;
+    height: 36px;
+    background-color: #fff;
+    color: var(--map-button);
+    padding: 0;
+}
+
+#app #map nav #mobileOptions.show {
+    background-color: #fff;
+    width: max-content;
+    margin-top: 4px;
+    box-shadow: 0px 2px 4px 0px var(--leaflet-shadow);
+    overflow-y: scroll;
+    max-height: 64vh;
+}
+
+#app #map nav #mobileOptions.show ul li {
+    margin: 0 !important;
+}
+
+#app #map nav #mobileOptions.show ul li>div {
+    cursor: pointer;
+    padding: 8px 12px;
+    color: var(--map-button);
+    width: auto;
+    border: 2px solid transparent;
+}
+
+#app #map nav #mobileOptions.show ul li>div.isActive {
+    border-color: var(--main);
+}
+
+#app #map nav #mobileOptions.show ul li>div:hover {
+    background-color: #f4f4f4;
+}
+
+#app .right-sidebar .close-active-panel {
+    display: none;
+    width: 100%;
+}
+
+@media only screen and (max-width: 800px) {
+
+    #app #map .leaflet-features,
+    #app #map .leaflet-measure-area,
+    #app #map .leaflet-measure-line,
+    #app #map .leaflet-control-graticule,
+    #app #map .leaflet-control-active-layers {
+        display: none;
+    }
+
+    #app #map .download-png-panel {
+        box-shadow: unset;
+    }
+
+    #app #map .download-png-panel .download-png-button {
+        background: transparent !important;
+        color: transparent !important;
+        border: transparent !important;
+    }
+
+    #app #map .download-png-panel .download-png-button .download-png-info {
+        box-shadow: 0px 2px 4px 0px var(--leaflet-shadow);
+    }
+
+    #app #map .download-png-panel .download-png-button .download-png-info {
+        display: none;
+        padding: 12px;
+        position: absolute;
+        right: 115px;
+        top: 85px;
+        background-color: #fff;
+    }
+
+    #app #map .download-png-panel .download-png-button:after {
+        content: unset;
+    }
+
+    #app #map nav {
+        display: flex;
+    }
+
+    #app #map {
+        position: relative;
+        height: 86%;
+    }
+
+    #app .left-sidebar {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        z-index: 1001;
+    }
+
+    #app .left-sidebar .button-toggle {
+        left: 10px;
+        top: 52px;
+    }
+
+    #app .left-sidebar:not(.close) .button-toggle {
+        right: 0;
+        top: 0;
+    }
+
+    #app .left-sidebar .legend-panel {
+        width: 100%;
+    }
+
+    #app .right-sidebar:not(.close) {
+        z-index: 1002;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    #app .right-sidebar:not(.close)>div {
+        width: 100%;
+    }
+
+    #app #map .leaflet-control-active-layers {
+        z-index: 1003;
+    }
+
+    #app .right-sidebar .active-panel .active-layers-panel,
+    #app .right-sidebar .active-panel .active-custom-layers-panel {
+        width: 100%;
+    }
+
+    #app .bitacora-container {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        top: 0;
+        left: 0;
+        transform: unset;
+    }
+
+    .custom-modal {
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .custom-modal .custom-modal-pin {
+        display: none;
+    }
+
+    #app #map-player {
+        height: auto;
+        width: 100%;
+    }
+
+    #app #map-player>div .leaflet-control-timecontrol.timecontrol-date {
+        margin-top: 6px;
+        float: right;
+        clear: unset;
+    }
+
+    #app #map-player .leaflet-control-timecontrol.timecontrol-slider.timecontrol-dateslider {
+        clear: both;
+        float: left;
+    }
+
+    #app #map-player .leaflet-control-timecontrol.timecontrol-slider.timecontrol-dateslider .slider {
+        float: left;
+    }
+
+    #app #map-player .leaflet-control-timecontrol.timecontrol-slider.timecontrol-speed {
+        float: right;
+        margin-right: 16px;
+        clear: unset;
+    }
+
+    #app .cursor-container {
+        display: none !important;
+    }
+
+    #app .language-container .language-panel {
+        margin-left: 38px;
+        margin-top: -35px !important;
+    }
+
+    #app #map .basemaps-panel.show {
+        top: -79px;
+    }
+
+    #app .right-sidebar .close-active-panel {
+        display: block;
+    }
+
+    #app .right-sidebar .close-active-panel .close-button-active-panel {
+        border: 2px solid transparent;
+        height: 44px;
+        padding: 5px;
+        float: right;
+    }
+
+    #app .right-sidebar .close-active-panel .close-button-active-panel:after {
+        content: "\e53b";
+        font-family: "Material Symbols Rounded";
+        font-size: 22px;
+        font-weight: 400;
+        background-color: #fff;
+        color: var(--main);
+        padding: 4px 6px;
+    }
+}
+
+@media only screen and (max-height: 590px) and (orientation: landscape) {
+    #app .leaflet-top.leaflet-right {
+        width: 250px;
+    }
+
+    #app #map .leaflet-control-container .leaflet-control-fullscreen {
+        margin-bottom: 0px;
+    }
+
+    #app #map .leaflet-control-container .leaflet-features {
+        position: absolute;
+        top: 8px;
+        left: 0px;
+        margin-top: 2px;
+    }
+
+    #app #map .leaflet-control-container .leaflet-measure-area {
+        position: absolute;
+        top: 8px;
+        left: 35px;
+    }
+
+    #app #map .leaflet-control-container .leaflet-measure-line {
+        position: absolute;
+        top: 8px;
+        left: 70px;
+    }
+
+    #app #map .leaflet-control-container .leaflet-control-graticule {
+        position: absolute;
+        top: 8px;
+        left: 140px;
+    }
+
+    #app #map .leaflet-control-container .leaflet-control-basemaps {
+        margin-top: 8px;
+    }
+
+    #app #map .leaflet-control-container .leaflet-control-active-layers {
+        margin-top: 8px;
+    }
+
+    #app #map .leaflet-control-container .download-png-panel {
+        position: absolute;
+        top: 6px;
+        left: 105px;
+    }
+}
